@@ -20,8 +20,16 @@ module.exports = {
             'darkb1': '#42047E',
             'darkb2': '#07F49E',
           }
-        }
+        },
+        'sidebar-gray': '#f6f7f6',
       },
+      width: {
+        '1/10': '10%',
+        '9/10': '90%',
+      },
+      borderRadius: {
+        '4xl': '2.5rem',
+      }
     },
   },
   plugins: [],
