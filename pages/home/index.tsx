@@ -5,7 +5,7 @@ import Sidebar from "../../components/dashboard/Sidebar";
 
 const Admin: NextPage = () => {
 	const [tab, setTab] = useState("dashboard");
-	const [theme, setTheme] = useState("dark");
+	const [theme, setTheme] = useState("light");
 
 	// * Function to retrieve last tab state
 	const getLastTab = () => {
