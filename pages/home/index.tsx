@@ -1,11 +1,11 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import DashboardSideBar from "../../components/dashboard/Sidebar";
+import Sidebar from "../../components/dashboard/Sidebar";
 
 const Admin: NextPage = () => {
 	const [tab, setTab] = useState("dashboard");
-	const [ darkMode, setDarkMode ] = useState("light");
+	const [theme, setTheme] = useState("light");
 
 	// * Function to retrieve last tab state
 	const getLastTab = () => {
@@ -18,10 +18,10 @@ const Admin: NextPage = () => {
 	// * Function to retrieve light/dark mode
 	const getTheme = () => {
 		const savedTheme = localStorage.getItem("theme");
-		if(savedTheme) {
-			setDarkMode(savedTheme);
+		if (savedTheme) {
+			setTheme(savedTheme);
 		}
-	}
+	};
 
 	// * Function to set new tab state
 	const setNewTab = (tab: string) => {
@@ -30,24 +30,31 @@ const Admin: NextPage = () => {
 	};
 
 	// * Function to set/change theme
-	const setTheme = (theme: string) => {
+	const setNewTheme = (theme: string) => {
 		localStorage.setItem("theme", theme);
 		setTheme(theme);
-	}
+	};
 
 	useEffect(() => {
 		getTheme();
 		getLastTab();
 	}, []);
-	
+
 	return (
 		<div className="w-screen h-screen">
 			<Head>
 				<title>Dashboard</title>
 			</Head>
 			<div className="w-full h-full">
-				<div className="w-full h-full flex bg-brand-soft-white">
-
+				<div
+					className={`w-full h-full flex ${
+						theme === "dark" ? "bg-brand-black" : "bg-brand-font"
+					}`}>
+					<div className={`w-1/10 h-full flex justify-center items-center`}>
+						<Sidebar setNewTab={setNewTab} theme={theme} />
+					</div>
+					<div className={`w-9/10 h-full flex relative justify-center items-center ${theme === "dark" ? "bg-brand-black" : "bg-brand-font"}`}>
+					</div>
 				</div>
 			</div>
 		</div>
