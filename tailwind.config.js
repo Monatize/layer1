@@ -38,6 +38,9 @@ module.exports = {
       },
       borderRadius: {
         '4xl': '2.5rem',
+      },
+      transitionDuration: {
+        '0.6': '600ms',
       }
     },
   },

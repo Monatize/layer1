@@ -13,7 +13,7 @@ const Sidebar = (props: ISidebarProps) => {
 			<div
 				className={`${
 					props.theme === "dark" ? "gradient-border shadow-lg shadow-brand-gradients-darkb2" : "gradient-border-light shadow-lg shadow-brand-gradients-darkb1"
-				} w-full h-full rounded-3xl flex flex-col animate-in slide-in-from-left duration-1000`}>
+				} w-full h-full rounded-3xl flex flex-col animate-in slide-in-from-left ease-[cubic-bezier(.76,.3,.15,.84)] duration-0.6`}>
 
                     {/* Logo Mark */}
                     <div className="w-full h-1/8 flex justfiy-center items-center">
