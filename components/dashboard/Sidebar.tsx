@@ -1,3 +1,6 @@
+import { IconContext } from 'react-icons';
+
+
 interface ISidebarProps {
 	// * Add setNewTab function to sidebar, in order to update tab state in main and reflect tab state
 	setNewTab: (tab: string) => void;
