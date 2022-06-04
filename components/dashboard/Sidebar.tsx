@@ -12,8 +12,8 @@ const Sidebar = (props: ISidebarProps) => {
 		<div className="w-full h-full p-8">
 			<div
 				className={`${
-					props.theme === "dark" ? "gradient-border" : "gradient-border-light"
-				} w-full h-full rounded-3xl drop-shadow-xl flex flex-col`}>
+					props.theme === "dark" ? "gradient-border shadow-lg shadow-brand-gradients-darkb2" : "gradient-border-light shadow-lg shadow-brand-gradients-darkb1"
+				} w-full h-full rounded-3xl flex flex-col animate-in slide-in-from-left duration-1000`}>
 
                     {/* Logo Mark */}
                     <div className="w-full h-1/8 flex justfiy-center items-center">
@@ -22,23 +22,23 @@ const Sidebar = (props: ISidebarProps) => {
                     </div>
 
                     {/* Tabs */}
-                    <div className="w-full h-6/8 bg-blue-500 flex flex-col">
-                        <div className="Home w-full h-1/6 bg-black">
+                    <div className="w-full h-6/8 flex flex-col">
+                        <div className="Home w-full h-1/6 ">
 
                         </div>
-                        <div className="Dashboard w-full h-1/6 bg-black">
+                        <div className="Dashboard w-full h-1/6 ">
 
                         </div>
-                        <div className="Pages w-full h-1/6 bg-black">
+                        <div className="Pages w-full h-1/6 ">
 
                         </div>
-                        <div className="Assets w-full h-1/6 bg-black">
+                        <div className="Assets w-full h-1/6 ">
 
                         </div>
-                        <div className="Contracts w-full h-1/6 bg-black">
+                        <div className="Contracts w-full h-1/6 ">
 
                         </div>
-                        <div className="Settings w-full h-1/6 bg-black">
+                        <div className="Settings w-full h-1/6 ">
 
                         </div>
                     </div>

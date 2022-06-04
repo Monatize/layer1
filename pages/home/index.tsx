@@ -50,7 +50,7 @@ const Admin: NextPage = () => {
 					className={`w-full h-full flex ${
 						theme === "dark" ? "bg-brand-black" : "bg-brand-font"
 					}`}>
-					<div className={`w-1/10 h-full flex justify-center items-center`}>
+					<div className={`w-1/10 h-full flex justify-center items-center animate-in fade-in duration-1000`}>
 						<Sidebar setNewTab={setNewTab} theme={theme} />
 					</div>
 					<div className={`w-9/10 h-full flex relative justify-center items-center ${theme === "dark" ? "bg-brand-black" : "bg-brand-font"}`}>
