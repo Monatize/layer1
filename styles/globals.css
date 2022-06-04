@@ -13,7 +13,7 @@
 
 .gradient-border-r {
 	border-right: 4px double transparent;
-	background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)),
+	background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
 		radial-gradient(circle at left top, rgb(126, 242, 157), rgb(15, 104, 169));
 	background-origin: border-box;
 	background-clip: padding-box, border-box;

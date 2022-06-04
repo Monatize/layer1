@@ -4,44 +4,54 @@ import { useEffect, useState } from "react";
 import DashboardSideBar from "../../components/dashboard/Sidebar";
 
 const Admin: NextPage = () => {
+	const [tab, setTab] = useState("dashboard");
+	const [ darkMode, setDarkMode ] = useState("light");
 
-    // * State variables to hold tab state
-    const [ tab, setTab ] = useState("dashboard")
+	// * Function to retrieve last tab state
+	const getLastTab = () => {
+		const savedTab = localStorage.getItem("tab");
+		if (savedTab) {
+			setTab(savedTab);
+		}
+	};
 
-    // * Function to retrieve last tab state
-    const getLastTab = () => {
-        const savedTab = localStorage.getItem("tab");
-        if(savedTab) {
-            setTab(savedTab);
-        }
-    }
+	// * Function to retrieve light/dark mode
+	const getTheme = () => {
+		const savedTheme = localStorage.getItem("theme");
+		if(savedTheme) {
+			setDarkMode(savedTheme);
+		}
+	}
 
-    // * Function to set new tab state
-    const setNewTab = (tab: string) => {
-        localStorage.setItem("tab", tab);
-        setTab(tab);
-    }
+	// * Function to set new tab state
+	const setNewTab = (tab: string) => {
+		localStorage.setItem("tab", tab);
+		setTab(tab);
+	};
 
-    useEffect(() => {
-        getLastTab();
-    }, [])
-    return (
-        <div className="w-screen h-screen">
-            <Head>
-                <title>Dashboard</title>
-            </Head>
-            <div className="w-full h-full">
-                <div className="w-full h-full flex flex-row bg-brand-white">
-                    <div className="w-1/10 h-full bg-brand-black">
-                        <DashboardSideBar setNewTab={setNewTab} />
-                    </div>
-                    <div className="w-9/10 h-full bg-brand-black">
+	// * Function to set/change theme
+	const setTheme = (theme: string) => {
+		localStorage.setItem("theme", theme);
+		setTheme(theme);
+	}
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
+	useEffect(() => {
+		getTheme();
+		getLastTab();
+	}, []);
+	
+	return (
+		<div className="w-screen h-screen">
+			<Head>
+				<title>Dashboard</title>
+			</Head>
+			<div className="w-full h-full">
+				<div className="w-full h-full flex bg-brand-soft-white">
+
+				</div>
+			</div>
+		</div>
+	);
+};
 
 export default Admin;
