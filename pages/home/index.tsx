@@ -1,6 +1,9 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+
+import PrelaunchHome from "../../components/dashboard/Home/PrelaunchHome";
+import Store from "../../components/dashboard/Home/Store";
 import Sidebar from "../../components/dashboard/Sidebar";
 
 const Admin: NextPage = () => {
@@ -36,6 +39,7 @@ const Admin: NextPage = () => {
 	};
 
 	useEffect(() => {
+		
 		getTheme();
 		getLastTab();
 	}, []);
@@ -47,14 +51,24 @@ const Admin: NextPage = () => {
 			</Head>
 			<div className="w-full h-full">
 				<div
-					className={`w-full h-full flex ${
+					className={`w-full h-full flex transition-all ease-in-out duration-500 ${
 						theme === "dark" ? "bg-brand-black" : "bg-brand-font"
 					}`}>
-					<div className={`w-1/10 h-full flex justify-center items-center animate-in fade-in ease-[cubic-bezier(.76,.3,.15,.84)] duration-0.6`}>
-						<Sidebar setNewTab={setNewTab} theme={theme} />
+					<div
+						className={`w-1/10 h-full flex justify-center items-center animate-in fade-in ease-[cubic-bezier(.76,.3,.15,.84)] duration-0.6`}>
+						<Sidebar setNewTab={setNewTab} setNewTheme={setNewTheme} theme={theme} />
 					</div>
-					<div className={`w-9/10 h-full flex relative justify-center items-center ${theme === "dark" ? "bg-brand-black" : "bg-brand-font"}`}>
-					</div>
+
+					{tab === "home" && (
+						<>
+							<div className={`w-7/10 h-full`}>
+								<PrelaunchHome theme={theme} />
+							</div>
+							<div className={`w-2/10 h-full bg-blue-500`}>
+								<Store theme={theme} />
+							</div>
+						</>
+					)}
 				</div>
 			</div>
 		</div>
