@@ -89,13 +89,17 @@ const Sidebar = (props: ISidebarProps) => {
 				{/* Dark Mode & Dashboard Version */}
 				<div className="w-full h-1/8 flex flex-col justify-center items-center">
 					<div className="w-full h-1/2 flex flex-row space-x-2 items-end justify-center">
+
                         <IconContext.Provider value={{ className: `${props.theme === "dark" ? 'fill-brand-font' : 'fill-brand-black'}`, size: "1.5em"}}>
                             <BsSunFill />
                         </IconContext.Provider>
-						<input onChange={setOppositeTheme} type="checkbox" className="toggle toggle-md" />
+
+						<input onChange={setOppositeTheme} type="checkbox" className="toggle toggle-md" checked={props.theme === "dark" ? true : false} />
+
                         <IconContext.Provider value={{ className: `${props.theme === "dark" ? 'fill-brand-font' : 'fill-brand-black'}`, size: "1.5em"}}>
                             <BsMoonFill />
                         </IconContext.Provider>
+						
 					</div>
 					<div className="w-full h-1/2 flex justify-center items-end">
 						<h1 className={`${props.theme === "dark" ? 'text-brand-font' : 'text-brand-black'} text-xs font-normal`}>V0.1 ALPHA</h1>

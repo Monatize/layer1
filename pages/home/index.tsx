@@ -39,7 +39,6 @@ const Admin: NextPage = () => {
 	};
 
 	useEffect(() => {
-		
 		getTheme();
 		getLastTab();
 	}, []);
@@ -64,7 +63,7 @@ const Admin: NextPage = () => {
 							<div className={`w-7/10 h-full`}>
 								<PrelaunchHome theme={theme} />
 							</div>
-							<div className={`w-2/10 h-full bg-blue-500`}>
+							<div className={`w-2/10 h-full`}>
 								<Store theme={theme} />
 							</div>
 						</>

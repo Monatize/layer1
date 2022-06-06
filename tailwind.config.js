@@ -23,6 +23,9 @@ module.exports = {
         },
         'sidebar-gray': '#f6f7f6',
       },
+      fontFamily: {
+        'mt': ['Montserrat']
+      },
       width: {
         '1/10': '10%',
         '2/10': '20%',
