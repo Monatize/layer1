@@ -27,11 +27,11 @@ const Store = (props: IStore) => {
     return (
         <div className={`w-full h-full transition-all ease-in-out duration-500 ${props.theme === "dark" ? 'bg-brand-black' : 'bg-brand-font'}`}>
             <div className="w-full h-1/2 flex flex-col justify-center items-center">
-                <div onMouseEnter={() => setEditPFP(!editPFP)} onMouseLeave={() => setEditPFP(!editPFP)} className={`w-80 h-80 ${file === "" ? 'bg-gray-500' : `bg-[url('https://i.ibb.co/${file}')]`} shadow-md shadow-brand-green bg-contain rounded-full flex justify-center items-center`}>
+                <div onMouseEnter={() => setEditPFP(!editPFP)} onMouseLeave={() => setEditPFP(!editPFP)} className={`w-72 h-72 ${file === "" ? 'bg-gray-500' : `bg-[url('https://i.ibb.co/${file}')]`} shadow-md shadow-brand-green bg-contain rounded-full flex justify-center items-center`}>
 
                     <input type="file" id="file" accept="image/png, image/jpeg, image/webp" ref={inputFile} onChange={uploadFile} style={{display: 'none'}} />
 
-                    <div onClick={() => inputFile.current!.click()} className={`${editPFP ? 'flex' : 'hidden'} absolute w-80 h-80 rounded-full justify-center items-center bg-black/70`}>
+                    <div onClick={() => inputFile.current!.click()} className={`${editPFP ? 'flex' : 'hidden'} absolute w-72 h-72 rounded-full justify-center items-center bg-black/70`}>
                         <IconContext.Provider value={{ className: "fill-white", size: "3rem"}}>
                             <BsPencilFill />
                         </IconContext.Provider>
