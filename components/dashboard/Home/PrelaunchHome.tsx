@@ -30,12 +30,12 @@ const PrelaunchHome = (props: IPrelaunchHome) => {
 				</div>
 
 				<div
-					className={`checklist w-1/2 h-full flex justify-center items-center`}>
-					<div className={`inner-checklist w-10/12 h-5/6`}>
+					className={`learning-path w-1/2 h-full flex justify-center items-center`}>
+					<div className={`inner-learning-path w-10/12 h-5/6`}>
 						<div
-							className={`inner-checklist-title-wrapper w-full h-2/8 flex items-center pl-2`}>
+							className={`inner-learning-path-title-wrapper w-full h-2/8 flex items-center pl-2`}>
 							<h1
-								className={`inner-checklist-title font-mt text-[2.5rem] font-semibold ${
+								className={`inner-learning-path-title font-mt text-[2.5rem] font-semibold ${
 									props.theme === "dark"
 										? "text-brand-font"
 										: "text-brand-black"
@@ -48,18 +48,23 @@ const PrelaunchHome = (props: IPrelaunchHome) => {
 			</div>
 			<div className={`w-full h-1/2 flex flex-row`}>
 				<div
-					className={`checklist w-1/2 h-full flex justify-center items-center `}>
-					<div className={`inner-checklist w-10/12 h-5/6`}>
+					className={`posts w-1/2 h-full flex justify-center items-center `}>
+					<div className={`inner-posts w-10/12 h-5/6`}>
 						<div
-							className={`inner-checklist-title-wrapper w-full h-1/8 flex items-center pl-2`}>
+							className={`inner-posts-title-wrapper w-full h-1/8 flex items-center pl-2`}>
 							<h1
-								className={`inner-checklist-title font-mt text-[2.5rem] font-semibold ${
+								className={`inner-posts-title font-mt text-[2.5rem] font-semibold ${
 									props.theme === "dark"
 										? "text-brand-font"
 										: "text-brand-black"
 								}`}>
 								Suggested Posts
 							</h1>
+						</div>
+						<div className={`inner-posts-map w-full h-7/8 pt-6 pb-6 flex flex-col space-y-2 bg-black`}>
+							<div className="w-full h-full bg-blue-500">
+
+							</div>
 						</div>
 					</div>
 				</div>
