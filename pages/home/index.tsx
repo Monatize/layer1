@@ -8,7 +8,7 @@ import Sidebar from "../../components/dashboard/Sidebar";
 import WalkthroughModal from "../../components/dashboard/WalkthroughModal";
 
 const Admin: NextPage = () => {
-	const [tab, setTab] = useState("dashboard");
+	const [tab, setTab] = useState("home");
 	const [theme, setTheme] = useState("light");
 	const [firstTime, setFirstTime] = useState(true);
 

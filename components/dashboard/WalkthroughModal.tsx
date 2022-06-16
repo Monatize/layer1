@@ -10,7 +10,7 @@ const WalkthroughModal = (props: ModalProps) => {
                     <img src="/m-grad.png" className="w-20" />
                 </div>
                 <div className="w-full h-1/5 flex justify-center items-center">
-                    <h1 className="font-mt text-3xl font-semibold text-black">Welcome, let's take a look around</h1>
+                    <h1 className="font-mt text-3xl font-semibold text-black">Welcome, let&apos;s take a look around</h1>
                 </div>
             </div>
         </div>
