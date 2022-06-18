@@ -11,8 +11,8 @@ interface ISidebar {
 const Sidebar = (props: ISidebar) => {
 	return (
 		<div
-			className={`w-full h-full md:rounded-3xl flex flex-col shrink-0 overflow-y-scroll ${
-				props.dark ? "gradient-border shadow-lg shadow-brand-green" : "gradient-border-light shadow-lg shadow-brand-purple"
+			className={`w-full sm:rounded-3xl flex flex-col shrink-0 ${
+				props.dark ? "gradient- shadow-lg shadow-brand-green" : "gradient--light shadow-lg shadow-brand-purple"
 			}`}>
 			<div className="w-full pt-8 pb-8 flex shrink-0 justify-center items-center">
 				{props.dark && <img src="/m-white.png" className="w-16" />}
