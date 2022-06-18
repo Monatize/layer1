@@ -29,15 +29,15 @@ const Sidebar = (props: ISidebarProps) => {
     }
 
 	return (
-		<div className="w-full h-full p-8">
+		<div className="w-full h-full shrink-0 overflow-y-scroll">
 			<div
 				className={`${
 					props.theme === "dark"
-						? "gradient-border shadow-lg shadow-brand-gradients-darkb2"
-						: "gradient-border-light shadow-lg shadow-brand-gradients-darkb1"
-				} w-full h-full rounded-3xl flex flex-col animate-in slide-in-from-left ease-in-out duration-0.6`}>
+						? "bg-brand-black border-r border-brand-font"
+						: "bg-brand-font border-r border-brand-black"
+				} w-full h-full flex flex-col shrink-0 overflow-y-scroll`}>
 				{/* Logo Mark */}
-				<div className="w-full h-1/8 flex justfiy-center items-center">
+				<div className="w-full h-1/8 flex shrink-0 justfiy-center items-center">
 					{props.theme === "dark" && (
 						<img src="/m-white.png" className="scale-50" />
 					)}
@@ -47,7 +47,7 @@ const Sidebar = (props: ISidebarProps) => {
 				</div>
 
 				{/* Tabs */}
-				<div className="w-full h-6/8 flex flex-col">
+				<div className="w-full h-6/8 flex flex-col shrink-0">
 					<div
 						onClick={() => setNewTab("home")}
 						className={`${

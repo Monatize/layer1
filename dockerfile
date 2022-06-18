@@ -2,17 +2,17 @@ FROM node:alpine
 
 RUN npm install -g pnpm
 
-RUN mkdir -p /usr/src/app
+RUN mkdir -p /dashboard
 ENV PORT 3000
 
-WORKDIR /usr/src/app
+WORKDIR /dashboard/
 
-COPY package.json /usr/src/app/
-COPY pnpm-lock.yaml /usr/src/app/
+COPY package.json /dashboard/
+COPY pnpm-lock.yaml /dashboard/
 
-RUN pnpm install --production
+RUN pnpm install
 
-COPY . /usr/src/app/
+COPY . /dashboard/
 
 RUN pnpm build
 
