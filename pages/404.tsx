@@ -1,6 +1,6 @@
 const NotFound = () => {
 	return (
-		<div className="w-screen h-screen flex flex-col space-y-8 justify-center items-center bg-brand-black">
+		<div className="w-screen h-screen flex flex-col space-y-8 justify-center items-center text-center bg-brand-black">
 			<img src="/m-white.png" className="w-36" />
 			<h1 className="text-white font-mt font-bold text-6xl">
 				This is awkward....
