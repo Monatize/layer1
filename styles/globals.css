@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,9 +23,20 @@
 	background-origin: border-box;
 	background-clip: padding-box, border-box;
 }
+
 .gradient-border-r {
-	border-right: 4px double transparent;
-	background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+	/* color: rgb(var(--text-color)); */
+	border-right: 2px double transparent;
+	background-image: linear-gradient(rgb(9, 9, 9), rgb(9, 9, 9)),
+		radial-gradient(circle at left top, rgb(126, 242, 157), rgb(15, 104, 169));
+	background-origin: border-box;
+	background-clip: padding-box, border-box;
+}
+
+.gradient-border-light-r {
+	/* color: rgb(var(--text-color)); */
+	border-right: 2px double transparent;
+	background-image: linear-gradient(rgb(242, 242, 242), rgb(242, 242, 242)),
 		radial-gradient(circle at left top, rgb(126, 242, 157), rgb(15, 104, 169));
 	background-origin: border-box;
 	background-clip: padding-box, border-box;
