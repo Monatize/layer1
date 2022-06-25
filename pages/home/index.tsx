@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
 import HomePanel from "../../components/HomePanel";
+import MobileNav from "../../components/MobileNavigation";
 import Sidebar from "../../components/Sidebar";
 
 const Home: NextPage = () => {
@@ -20,7 +21,7 @@ const Home: NextPage = () => {
 				dark ? "bg-brand-black" : "bg-brand-font"
 			}`}>
 			<div className="w-full h-full flex flex-row shrink-0">
-				<div className={`w-[10rem] flex shrink-0`}>
+				<div className={`w-[10rem] shrink-0 hidden sm:flex`}>
 					<Sidebar
 						toggleTheme={toggleTheme}
 						tab={tab}
@@ -29,7 +30,7 @@ const Home: NextPage = () => {
 					/>
 				</div>
 				<div
-					className={`w-[calc(100%-10rem)] ${
+					className={`w-full sm:w-[calc(100%-10rem)] ${
 						dark ? "bg-brand-black" : "bg-brand-font"
 					}`}>
 					{tab === "home" && <HomePanel dark={dark} />}

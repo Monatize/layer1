@@ -6,7 +6,12 @@ import {
 	RiPagesLine,
 } from "react-icons/ri";
 import { MdOutlineDashboard, MdDashboard } from "react-icons/md";
-import { BsSunFill, BsMoonFill } from "react-icons/bs";
+import {
+	BsSunFill,
+	BsMoonFill,
+	BsFileCode,
+	BsFileCodeFill,
+} from "react-icons/bs";
 
 interface ISidebar {
 	tab: string;
@@ -27,7 +32,7 @@ const Sidebar = (props: ISidebar) => {
 				{props.dark && <img src="/m-white.png" className="w-16" />}
 				{!props.dark && <img src="/m-grad.png" className="w-16" />}
 			</div>
-			<div className="Spacer w-full md:pt-8 md:pb-8 flex shrink-0" />
+			<div className="Spacer w-full pt-8 pb-8 flex shrink-0" />
 			{/* Home Tab */}
 			<div
 				onClick={() => props.setTab("home")}
@@ -113,6 +118,36 @@ const Sidebar = (props: ISidebar) => {
 							props.dark ? "text-brand-font" : "text-brand-black"
 						} font-semibold`}>
 						Pages
+					</h1>
+				</div>
+			</div>
+			{/* Home Tab */}
+
+			{/* Pages Tab */}
+			<div
+				onClick={() => props.setTab("contracts")}
+				className={`Contracts w-full pt-2 pb-2 flex justify-center items-center shrink-0 pl-2 pr-2 hover:cursor-pointer`}>
+				<div
+					className={`w-full flex space-x-2 items-center shrink-0 pt-1 pb-1 pl-1 hover:bg-brand-green/20 rounded-lg transition-all duration-300 ${
+						props.tab === "contracts"
+							? "bg-brand-green/50 hover:bg-brand-green/50"
+							: ""
+					}`}>
+					<IconContext.Provider
+						value={{
+							size: "2rem",
+							className: `${
+								props.dark ? "fill-brand-font" : "fill-brand-black"
+							} transition-all duration-500`,
+						}}>
+						{props.tab === "contracts" && <BsFileCodeFill />}
+						{props.tab !== "contracts" && <BsFileCode />}
+					</IconContext.Provider>
+					<h1
+						className={`font-mt transition-all duration-500 ${
+							props.dark ? "text-brand-font" : "text-brand-black"
+						} font-semibold`}>
+						Contracts
 					</h1>
 				</div>
 			</div>

@@ -2,17 +2,17 @@ FROM node:alpine
 
 RUN npm install -g pnpm
 
-RUN mkdir -p /dashboard
+RUN mkdir -p /monatize/layer1/
 ENV PORT 3000
 
-WORKDIR /dashboard/
+WORKDIR /monatize/layer1
 
-COPY package.json /dashboard/
-COPY pnpm-lock.yaml /dashboard/
+COPY package.json /monatize/layer1/
+COPY pnpm-lock.yaml /monatize/layer1/
 
 RUN pnpm install
 
-COPY . /dashboard/
+COPY . /monatize/layer1/
 
 RUN pnpm build
 
