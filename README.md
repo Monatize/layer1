@@ -4,9 +4,6 @@
 
 ## Overview
 
-Layer1 is an all in one management and display platform for creators on the
-Monatize platform.
-
 Layer1 includes:
 
 - A full creator dashboard
