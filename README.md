@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Layer1 By Monatize
 
-## Getting Started
+![Layer1 By Monatize](./assets/Banner.png)
 
-First, run the development server:
+## Overview
+
+Layer1 is an all in one management and display platform for creators on the
+Monatize platform.
+
+Layer1 includes:
+
+- A full creator dashboard
+  - Create and customize sites
+  - Deploy and view smart contracts
+  - Randomize assets
+  - View analytics
+  - Market yourself
+  - & More
+- The actual viewer page
+  - Allows visitors to come see the site and mint
+
+## How to develop?
+
+First, you want to clone the repo to your local machine. To get started:
 
 ```bash
-npm run dev
-# or
-yarn dev
+$ git clone https://github.com/Monatize/layer1.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+After you've cloned the repository, be sure to install all neccesary packages.
+Layer1 uses [pnpm](https://pnpm.io) for package management. Once they're
+installed, you can open it in your preffered text editor, and run it. This
+documentation uses VSCode as an example, but it is up to you.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+$ pnpm install
+$ code .
+$ pnpm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### **_Important_**!
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Before you begin to make changes, be sure to create and switch to a new git
+branch, correctly named, so you can properly merge later on.
 
-## Learn More
+To do this, use the `git switch -c` command to create and switch to a new branch
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+$ git switch -c my-new-branch
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Have fun building, and WAGMI!
