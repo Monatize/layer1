@@ -1,13 +1,43 @@
 import { NextPage } from "next";
+import { useEffect, useState } from "react";
+import HomePanel from "../../components/HomePanel";
+import MobileNav from "../../components/MobileNavigation";
+import Sidebar from "../../components/Sidebar";
 
-const Admin: NextPage = () => {
-    return (
-        <div className="w-screen h-screen">
-            <div className="w-full h-full bg-gradient-to-r from-brand-gradients-darkb1 to-brand-gradients-darkb2">
+const Home: NextPage = () => {
+	const [dark, setDark] = useState(true);
+	const [tab, setTab] = useState("dash");
 
-            </div>
-        </div>
-    )
-}
+	const toggleTheme = () => {
+		setDark(!dark);
+	};
 
-export default Admin;
+	const setNewTab = (tab: string) => {
+		setTab(tab);
+	};
+	return (
+		<div
+			className={`w-screen h-screen ${
+				dark ? "bg-brand-black" : "bg-brand-font"
+			}`}>
+			<div className="w-full h-full flex flex-row shrink-0">
+				<div className={`w-[10rem] shrink-0 hidden sm:flex`}>
+					<Sidebar
+						toggleTheme={toggleTheme}
+						tab={tab}
+						dark={dark}
+						setTab={setNewTab}
+					/>
+				</div>
+				<div
+					className={`w-full sm:w-[calc(100%-10rem)] ${
+						dark ? "bg-brand-black" : "bg-brand-font"
+					}`}>
+					{tab === "home" && <HomePanel dark={dark} />}
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export default Home;
