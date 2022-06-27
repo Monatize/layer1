@@ -1,19 +1,17 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from "next";
+import Head from "next/head";
 
 const Home: NextPage = () => {
-  return (
-    <div className="w-screen h-screen">
-      <Head>
-        <title>Monatize Dashboard</title>
-      </Head>
-      <main className="w-full h-full">
-        <div className="w-full h-full bg-green-500">
-          
-        </div>
-      </main>
-    </div>
-  )
-}
+	return (
+		<div className="w-screen h-screen">
+			<Head>
+				<title>Monatize Dashboard</title>
+			</Head>
+			<main className="w-full h-full">
+				<div className="w-full h-full bg-green-500"></div>
+			</main>
+		</div>
+	);
+};
 
-export default Home
+export default Home;
