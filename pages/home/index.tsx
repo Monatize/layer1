@@ -1,23 +1,54 @@
+// * React/Next
 import { NextPage } from "next";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+// * React/Next
+
+// * Navigation
+import Sidebar from "../../components/Navigation/Sidebar";
+import MobileNav from "../../components/Navigation/MobileNavigation";
+// * Navigation
+
+// * Panels
+import HomePanel from "../../components/Home/HomePanel";
+import StatsPanel from "../../components/Stats/StatsPanel";
+import PagesPanel from "../../components/Pages/PagesPanel";
+import ContractsPanel from "../../components/Contracts/ContractsPanel";
+// * Panels
+
+// * Icons
 import { IconContext } from "react-icons";
 import { BsMoonFill, BsSunFill } from "react-icons/bs";
-import HomePanel from "../../components/HomePanel";
-import MobileNav from "../../components/MobileNavigation";
-import Sidebar from "../../components/Sidebar";
+// * Icons
 
 const Home: NextPage = () => {
-	const [dark, setDark] = useState(true);
-	const [tab, setTab] = useState("dash");
+	const [dark, setDark] = useState(false);
+	const [tab, setTab] = useState("stats");
 
+	const getLastTheme = () => {
+		const lsTheme = localStorage.getItem("dark");
+		if (lsTheme && lsTheme === "false") {
+			setDark(false);
+		} else {
+			setDark(true);
+		}
+	};
 	const toggleTheme = () => {
+		if (dark) {
+			localStorage.setItem("dark", "false");
+		} else {
+			localStorage.setItem("dark", "true");
+		}
 		setDark(!dark);
 	};
 
 	const setNewTab = (tab: string) => {
 		setTab(tab);
 	};
+
+	useEffect(() => {
+		getLastTheme();
+	}, []);
 	return (
 		<div className={`w-screen h-screen ${dark ? "bg-brand-black" : "bg-brand-font"}`}>
 			<Head>
@@ -41,6 +72,12 @@ const Home: NextPage = () => {
 							</IconContext.Provider>
 							<div className="w-16 h-16 bg-gray-500 flex justify-center items-center rounded-full text-white font-bold text-3xl">P</div>
 						</div>
+					</div>
+					<div className="w-full h-full bg-purple-500">
+						{tab === "home" && <HomePanel dark={dark} />}
+						{tab === "stats" && <StatsPanel dark={dark} />}
+						{tab === "pages" && <PagesPanel dark={dark} />}
+						{tab === "contracts" && <ContractsPanel dark={dark} />}
 					</div>
 				</div>
 			</div>

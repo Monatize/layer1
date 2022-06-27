@@ -1,14 +1,21 @@
-import { IconContext } from "react-icons";
-import { RiHome2Line, RiHome2Fill, RiPagesFill, RiPagesLine } from "react-icons/ri";
-import { MdOutlineDashboard, MdDashboard } from "react-icons/md";
-import { BsFileCode, BsFileCodeFill } from "react-icons/bs";
+// * React/Next
+// * React/Next
 
+// * Icons
+import { IconContext } from "react-icons";
+import { BsFileCode, BsFileCodeFill } from "react-icons/bs";
+import { MdOutlineDashboard, MdDashboard } from "react-icons/md";
+import { RiHome2Line, RiHome2Fill, RiPagesFill, RiPagesLine } from "react-icons/ri";
+// * Icons
+
+// * Interfaces
 interface ISidebar {
 	tab: string;
 	dark: boolean; // * True = dark False = light
 	toggleTheme: () => void;
 	setTab: (tab: string) => void;
 }
+// * Interfaces
 
 const Sidebar = (props: ISidebar) => {
 	return (
@@ -34,21 +41,21 @@ const Sidebar = (props: ISidebar) => {
 			</div>
 			{/* Home Tab */}
 
-			{/* Dashboard Tab */}
-			<div onClick={() => props.setTab("dash")} className={`Dashboard w-full pt-2 pb-2 flex justify-center items-center shrink-0 pl-2 pr-2 hover:cursor-pointer`}>
+			{/* Stats Tab */}
+			<div onClick={() => props.setTab("stats")} className={`Stats w-full pt-2 pb-2 flex justify-center items-center shrink-0 pl-2 pr-2 hover:cursor-pointer`}>
 				<div className={`w-full flex space-x-2 items-center shrink-0 pt-1 pb-1 pl-1 hover:bg-brand-green/20 rounded-lg transition-all duration-300 ${props.tab === "dash" ? "bg-brand-green/50 hover:bg-brand-green/50" : ""}`}>
 					<IconContext.Provider
 						value={{
 							size: "2rem",
 							className: `${props.dark ? "fill-brand-font" : "fill-brand-black"} transition-all duration-500`,
 						}}>
-						{props.tab === "dash" && <MdDashboard />}
-						{props.tab !== "dash" && <MdOutlineDashboard />}
+						{props.tab === "stats" && <MdDashboard />}
+						{props.tab !== "stats" && <MdOutlineDashboard />}
 					</IconContext.Provider>
 					<h1 className={`font-mt transition-all duration-500 ${props.dark ? "text-brand-font" : "text-brand-black"} font-semibold`}>Stats</h1>
 				</div>
 			</div>
-			{/* Dashboard Tab */}
+			{/* Stats Tab */}
 
 			{/* Pages Tab */}
 			<div onClick={() => props.setTab("pages")} className={`Pages w-full pt-2 pb-2 flex justify-center items-center shrink-0 pl-2 pr-2 hover:cursor-pointer`}>
