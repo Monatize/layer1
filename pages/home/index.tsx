@@ -58,8 +58,8 @@ const Home: NextPage = () => {
 				<div className={`w-[10rem] h-full shrink-0 hidden sm:flex`}>
 					<Sidebar toggleTheme={toggleTheme} tab={tab} dark={dark} setTab={setNewTab} />
 				</div>
-				<div className={`w-full sm:w-[calc(100%-10rem)] transition-all ease-in-out duration-0.6 ${dark ? "bg-brand-black" : "bg-brand-font"}`}>
-					<div className="w-full flex pt-4 pb-4">
+				<div className={`w-full sm:w-[calc(100%-10rem)] transition-all ease-in-out duration-500 ${dark ? "bg-brand-black" : "bg-brand-font"}`}>
+					<div className={`w-full flex h-[6rem]`}>
 						<div className="w-1/2"></div>
 						<div className="w-1/2 flex space-x-4 justify-end items-center pr-4">
 							<IconContext.Provider
@@ -73,7 +73,7 @@ const Home: NextPage = () => {
 							<div className="w-16 h-16 bg-gray-500 flex justify-center items-center rounded-full text-white font-bold text-3xl">P</div>
 						</div>
 					</div>
-					<div className="w-full h-full bg-purple-500">
+					<div className="w-full h-[calc(100%-6rem)] overflow-y-scroll">
 						{tab === "home" && <HomePanel dark={dark} />}
 						{tab === "stats" && <StatsPanel dark={dark} />}
 						{tab === "pages" && <PagesPanel dark={dark} />}

@@ -19,7 +19,7 @@ interface ISidebar {
 
 const Sidebar = (props: ISidebar) => {
 	return (
-		<div className={`w-full h-full flex flex-col shrink-0 overflow-y-scroll transition-all ease-in-out duration-500 ${props.dark ? "bg-brand-black border-r border-brand-green" : "bg-brand-font border-r border-brand-purple"}`}>
+		<div className={`w-full h-full flex flex-col shrink-0 overflow-y-scroll transition-all ease-in-out duration-500 ${props.dark ? "bg-brand-black" : "bg-brand-font"}`}>
 			<div className="w-full pt-8 pb-8 flex shrink-0 justify-center items-center">
 				{props.dark && <img src="/m-white.png" className="w-16" />}
 				{!props.dark && <img src="/m-grad.png" className="w-16" />}
