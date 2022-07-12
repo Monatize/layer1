@@ -59,6 +59,7 @@ const Home: NextPage = () => {
         <Sidebar dark={dark} tab={tab} toggleTheme={toggleTheme} setTab={setNewTab} />
       </div>
       <div className={`w-[calc(100%-15rem)] ${dark ? 'bg-brand-black' : 'bg-brand-soft-white'} transition-all duration-500`}>
+        {tab === "home" && <HomePanel dark={dark}/>}
       </div>
     </div>
   );
