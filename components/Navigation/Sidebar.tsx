@@ -24,22 +24,22 @@ const Sidebar = (props: ISidebar) => {
         {!props.dark && <img src="/Light-M.png" />}
       </div>
 
-      <IconContextWrapper dark={props.dark} title={"Home"} setTab={props.setTab} tab={"home"}>
+      <IconContextWrapper dark={props.dark} title={"Home"} setTab={props.setTab} tab={"home"} disabled={true}>
         {props.tab === "home" && <RiHome2Fill />}
         {props.tab !== "home" && <RiHome2Line />}
       </IconContextWrapper>
 
-      <IconContextWrapper dark={props.dark} title={"Stats"} setTab={props.setTab} tab={"stats"}>
+      <IconContextWrapper dark={props.dark} title={"Stats"} setTab={props.setTab} tab={"stats"} disabled={true}>
         {props.tab === "stats" && <MdDashboard />}
         {props.tab !== "stats" && <MdOutlineDashboard />}
       </IconContextWrapper>
 
-      <IconContextWrapper dark={props.dark} title={"Pages"} setTab={props.setTab} tab={"pages"}>
+      <IconContextWrapper dark={props.dark} title={"Pages"} setTab={props.setTab} tab={"pages"} disabled={false}>
         {props.tab === "pages" && <RiPagesFill />}
         {props.tab !== "pages" && <RiPagesLine />}
       </IconContextWrapper>
 
-      <IconContextWrapper dark={props.dark} title={"Contracts"} setTab={props.setTab} tab={"contracts"}>
+      <IconContextWrapper dark={props.dark} title={"Contracts"} setTab={props.setTab} tab={"contracts"} disabled={false}>
         {props.tab === "contracts" && <BsFileCodeFill />}
         {props.tab !== "contracts" && <BsFileCode />}
       </IconContextWrapper>

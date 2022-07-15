@@ -24,7 +24,7 @@ import { BsMoonFill, BsSunFill } from "react-icons/bs";
 
 const Home: NextPage = () => {
   const [dark, setDark] = useState(false);
-  const [tab, setTab] = useState("home");
+  const [tab, setTab] = useState("pages");
 
   const getLastTheme = () => {
     const lsTheme = localStorage.getItem("dark");
