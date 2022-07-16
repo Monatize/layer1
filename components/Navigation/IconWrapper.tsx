@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 
 interface IWrapper {
 	dark: boolean;
@@ -9,7 +10,8 @@ interface IWrapper {
 }
 const IconWrapper = (props: IWrapper) => {
 	return (
-		<div
+		<motion.div
+			whileTap={{ scale: 1.15 }}
 			className={`p-3 ${props.disabled ? "cursor-not-allowed" : "cursor-pointer"}`}
 			onClick={() => {
 				if (!props.disabled) {
@@ -20,7 +22,7 @@ const IconWrapper = (props: IWrapper) => {
 				{props.children}
 				<h1 className={`${props.dark ? "text-brand-soft-white" : "text-brand-black"} text-xl font-mt font-semibold`}>{props.title}</h1>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
