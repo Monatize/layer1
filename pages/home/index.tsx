@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 
 // * Navigation
 import Sidebar from "../../components/Navigation/Sidebar";
-import MobileNav from "../../components/Navigation/MobileNavigation";
 // * Navigation
 
 // * Panels
@@ -15,12 +14,10 @@ import HomePanel from "../../components/Home/HomePanel";
 import StatsPanel from "../../components/Stats/StatsPanel";
 import PagesPanel from "../../components/Pages/PagesPanel";
 import ContractsPanel from "../../components/Contracts/ContractsPanel";
+import CreationsPanel from "../../components/Creations/CreationsPanel";
+import AssetsPanel from "../../components/Assets/AssetsPanel";
+import SettingsPanel from "../../components/Settings/AssetsPanel";
 // * Panels
-
-// * Icons
-import { IconContext } from "react-icons";
-import { BsMoonFill, BsSunFill } from "react-icons/bs";
-// * Icons
 
 const Home: NextPage = () => {
   const [dark, setDark] = useState(false);
@@ -60,6 +57,12 @@ const Home: NextPage = () => {
       </div>
       <div className={`w-[calc(100%-15rem)] ${dark ? 'bg-brand-black' : 'bg-brand-soft-white'} transition-all duration-500`}>
         {tab === "home" && <HomePanel dark={dark}/>}
+        {tab === "stats" && <StatsPanel dark={dark} />}
+        {tab === "pages" && <PagesPanel dark={dark} />}
+        {tab === "contracts" && <ContractsPanel dark={dark} />}
+        {tab === "creations" && <CreationsPanel dark={dark} />}
+        {tab === "assets" && <AssetsPanel dark={dark} />}
+        {tab === "settings" && <SettingsPanel dark={dark} />}
       </div>
     </div>
   );
