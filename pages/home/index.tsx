@@ -83,7 +83,18 @@ const Home: NextPage = () => {
 				address,
 			}).then(response => {
 				if(response.data.code === 200) {
-					setAuthenticated(true)
+					// -- Check if the stored STORE_ID matches the creator in the stores DB
+					console.log(process.env.NEXT_PUBLIC_STORE_ID);
+					axios.get(`http://localhost:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`).then(result => {
+						if(result.data.creator === address) {
+							console.log("Address matched address found for store, authenticated");
+							setAuthenticated(true)
+						}
+						else {
+							console.log("Address did not match address found for store, blocked");
+							setAuthenticated(false);
+						}
+					}).catch(e => console.log(e));
 				}
 				else {
 					setAuthenticated(false);
