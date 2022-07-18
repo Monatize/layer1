@@ -78,13 +78,12 @@ const Home: NextPage = () => {
 		if (authToken) {
 			console.log("Auth token found - authenticating");
 			// - Implies there was a token - now we query the authentication microservice using axios
-			let authQuery = await axios.post("http://localhost:3001/authentication", {
+			await axios.post("http://localhost:3001/authentication", {
 				token: authToken,
 				address,
 			}).then(response => {
 				if(response.data.code === 200) {
 					// -- Check if the stored STORE_ID matches the creator in the stores DB
-					console.log(process.env.NEXT_PUBLIC_STORE_ID);
 					axios.get(`http://localhost:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`).then(result => {
 						if(result.data.creator === address) {
 							console.log("Address matched address found for store, authenticated");
