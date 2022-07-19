@@ -65,6 +65,10 @@ const Home: NextPage = () => {
 	};
 
 	const attemptAuthentication = async () => {
+		axios.defaults.validateStatus = () => {
+			return true;
+		}
+
 		// - Attempt to authenticate the user with their JWT token & address
 
 		// - Connect to signer & get address w/ ethers.js
@@ -78,43 +82,72 @@ const Home: NextPage = () => {
 		if (authToken) {
 			console.log("Auth token found - authenticating");
 			// - Implies there was a token - now we query the authentication microservice using axios
-			await axios.post("http://localhost:3001/authentication", {
+			const authQuery = await axios.post("http://localhost:3001/authentication", {
 				token: authToken,
 				address,
-			}).then(response => {
-				if(response.data.code === 200) {
-					// -- Check if the stored STORE_ID matches the creator in the stores DB
-					axios.get(`http://localhost:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`).then(result => {
-						if(result.data.creator === address) {
-							console.log("Address matched address found for store, authenticated");
-							setAuthenticated(true)
-						}
-						else {
-							console.log("Address did not match address found for store, blocked");
-							setAuthenticated(false);
-						}
-					}).catch(e => console.log(e));
+			});
+
+			if(authQuery.status === 200) {
+				const storeQuery = await axios.get(`http://localhost:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`);
+				if(storeQuery.data.creator === address) {
+					console.log("Address matched address for store");
+					setAuthenticated(true);
 				}
 				else {
 					setAuthenticated(false);
 				}
-			}).catch(e => {
-				console.log(e);
-			})
+			}
+			else if(authQuery.status === 401) {
+				const message = getMessage(address);
+				const signature = await signer.signMessage(message.message);
+				const entryQuery = await axios.post("http://localhost:3001/entry", {
+					address,
+					signature,
+					nonce: message.nonce
+				});
+				
+				if(entryQuery.status === 200) {
+					const storeQuery = await axios.get(`http://localhost:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`);
+					if(storeQuery.data.creator === address) {
+						console.log("Address matched address for store");
+						localStorage.setItem("token", entryQuery.data.identifier);
+						setAuthenticated(true);
+					}
+					else {
+						setAuthenticated(false);
+					}
+				}
+				else {
+					localStorage.setItem("token", "");
+					setAuthenticated(false);
+				}
+			}
+			else {
+				setAuthenticated(false);
+			}
 		} else {
-			console.log("No auth token found - signing");
-			// - No auth token found - sign message & send it to entry
 			const message = getMessage(address);
 			const signature = await signer.signMessage(message.message);
-			let authQuery = await axios.post("http://localhost:3001/entry", {
+			const entryQuery = await axios.post("http://localhost:3001/entry", {
 				address,
 				signature,
-				nonce: message.nonce,
-			}).then(response => {
-				localStorage.setItem("token", response.data.identifier);
-				setAuthenticated(true);
-			}).catch(e => console.log(e)); 
+				nonce: message.nonce
+			});
 
+			if(entryQuery.status === 200) {
+				const storeQuery = await axios.get(`http://localhost:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`);
+				if(storeQuery.data.creator === address) {
+					console.log("Address matched address for store");
+					localStorage.setItem("token", entryQuery.data.identifier);
+					setAuthenticated(true);
+				}
+				else {
+					setAuthenticated(false);
+				}
+			}
+			else {
+				setAuthenticated(false);
+			}
 		}
 	};
 
