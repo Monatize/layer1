@@ -28,7 +28,7 @@ declare global {
 }
 const Home: NextPage = () => {
 	const [dark, setDark] = useState(false);
-	const [tab, setTab] = useState("pages");
+	const [tab, setTab] = useState("home");
 	const [authenticated, setAuthenticated] = useState(false);
 
 	const getLastTheme = () => {
@@ -174,7 +174,7 @@ const Home: NextPage = () => {
 					<div className={`w-[15rem] h-full p-6 ${dark ? "bg-brand-black" : "bg-brand-soft-white"} transition-all duration-500`}>
 						<Sidebar dark={dark} tab={tab} toggleTheme={toggleTheme} setTab={setNewTab} />
 					</div>
-					<div className={`w-[calc(100%-15rem)] ${dark ? "bg-brand-black" : "bg-brand-soft-white"} transition-all duration-500`}>
+					<div className={`w-[calc(100%-15rem)] p-6 ${dark ? "bg-brand-black" : "bg-brand-soft-white"} transition-all duration-500`}>
 						{tab === "home" && <HomePanel dark={dark} />}
 						{tab === "stats" && <StatsPanel dark={dark} />}
 						{tab === "pages" && <PagesPanel dark={dark} />}

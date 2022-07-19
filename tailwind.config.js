@@ -53,7 +53,7 @@ module.exports = {
         "btn": "5px 5px 0px #0E1111",
         "light-btn": "5px 5px 0px #FBFAF5",
         "sm-btn": "3px 3px 0px #0E1111",
-        "sm-light-btn": "0px 2px 0px #fb923c"
+        "sm-light-btn": "3px 3px 0px #FBFAF5"
       }
     },
   },
