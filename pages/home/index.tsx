@@ -175,7 +175,7 @@ const Home: NextPage = () => {
 						<Sidebar dark={dark} tab={tab} toggleTheme={toggleTheme} setTab={setNewTab} />
 					</div>
 					<div className={`w-[calc(100%-15rem)] p-6 ${dark ? "bg-brand-black" : "bg-brand-soft-white"} transition-all duration-500`}>
-						{tab === "home" && <HomePanel dark={dark} />}
+						{tab === "home" && <HomePanel dark={dark} setTab={setNewTab} />}
 						{tab === "stats" && <StatsPanel dark={dark} />}
 						{tab === "pages" && <PagesPanel dark={dark} />}
 						{tab === "contracts" && <ContractsPanel dark={dark} />}
