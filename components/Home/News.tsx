@@ -42,10 +42,10 @@ const News = (props: INews) => {
 			{news.map((newsPost) => (
 				<div className={`w-4/5 p-8 flex space-x-4 max-h-[20rem] ${props.dark ? "border border-brand-font shadow-light-btn" : "border border-brand-black shadow-btn"}`}>
 					<div className="flex flex-col space-y-2 overflow-scroll">
-                        <img src={newsPost.img} className="w-40 rounded-2xl" />
+                        <img src={newsPost.img} className="w-48 rounded-2xl" />
 						<h1 className={`text-xl font-mt font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>{newsPost.title}</h1>
 						<h1 className={`text-lg font-mt font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>{newsPost.description}</h1>
-                        <button className={`w-1/3 p-4 text-xl font-mt font-bold hover:-translate-y-2 transition-all duration-300 ${props.dark ? 'border border-brand-font shadow-sm-light-btn text-brand-font' : 'border border-brand-black shadow-sm-btn text-brand-black'}`}>Read More</button>
+                        <button className={`w-1/2 p-4 text-xl font-mt font-bold hover:-translate-y-2 transition-all duration-300 ${props.dark ? 'border border-brand-font shadow-sm-light-btn text-brand-font' : 'border border-brand-black shadow-sm-btn text-brand-black'}`}>Read More</button>
 					</div>
                     
 				</div>
