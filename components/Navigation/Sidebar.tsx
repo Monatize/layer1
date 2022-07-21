@@ -2,100 +2,76 @@
 // * React/Next
 
 // * Icons
-import { IconContext } from "react-icons";
-import { BsFileCode, BsFileCodeFill } from "react-icons/bs";
-import { MdOutlineDashboard, MdDashboard } from "react-icons/md";
-import { RiHome2Line, RiHome2Fill, RiPagesFill, RiPagesLine } from "react-icons/ri";
-// * Icons
+import { 
+  HomeIcon,
+  ChartBarIcon,
+  CollectionIcon,
+  TerminalIcon,
+  PhotographIcon,
+  CashIcon,
+  AdjustmentsIcon } from '@heroicons/react/solid';
+import {
+  HomeIcon as OutlineHomeIcon,
+  ChartBarIcon as OutlineChartBarIcon,
+  CollectionIcon as OutlineCollectionIcon,
+  TerminalIcon as OutlineTerminalIcon,
+  PhotographIcon as OutlinePhotographIcon,
+  CashIcon as OutlineCashIcon,
+  AdjustmentsIcon as OutlineAdjustmentsIcons} from '@heroicons/react/outline';
+
+import IconWrapper from './IconWrapper';
 
 // * Interfaces
 interface ISidebar {
-	tab: string;
-	dark: boolean; // * True = dark False = light
-	toggleTheme: () => void;
-	setTab: (tab: string) => void;
+  tab: string;
+  dark: boolean;
+  toggleTheme: () => void;
+  setTab: (tab: string) => void;
 }
-// * Interfaces
 
 const Sidebar = (props: ISidebar) => {
-	return (
-		<div className={`w-full h-full flex flex-col shrink-0 overflow-y-scroll transition-all ease-in-out duration-500 ${props.dark ? "bg-brand-black" : "bg-brand-font"}`}>
-			<div className="w-full pt-8 pb-8 flex shrink-0 justify-center items-center">
-				{props.dark && <img src="/m-white.png" className="w-16" />}
-				{!props.dark && <img src="/m-grad.png" className="w-16" />}
-			</div>
-			<div className="Spacer w-full pt-8 pb-8 flex shrink-0" />
-			{/* Home Tab */}
-			<div onClick={() => props.setTab("home")} className={`Home w-full pt-2 pb-2 flex justify-center items-center shrink-0 pl-2 pr-2 hover:cursor-pointer`}>
-				<div className={`w-full flex space-x-2 items-center shrink-0 pt-1 pb-1 pl-1 hover:bg-brand-green/20 rounded-lg transition-all duration-300 ${props.tab === "home" ? "bg-brand-green/50 hover:bg-brand-green/50" : ""}`}>
-					<IconContext.Provider
-						value={{
-							size: "2rem",
-							className: `${props.dark ? "fill-brand-font" : "fill-brand-black"} transition-all duration-500`,
-						}}>
-						{props.tab === "home" && <RiHome2Fill />}
-						{props.tab !== "home" && <RiHome2Line />}
-					</IconContext.Provider>
-					<h1 className={`font-mt transition-all duration-500 ${props.dark ? "text-brand-font" : "text-brand-black"} font-semibold`}>Home</h1>
-				</div>
-			</div>
-			{/* Home Tab */}
+  return (
+    <div className={`w-full h-full border ${props.dark ? 'border-brand-soft-white shadow-light-btn' : 'border-brand-black shadow-btn'} transition-all duration-500 overflow-y-scroll`}>
+      <div className="w-full transition-all duration-500">
+        {props.dark && <img src="/Dark-M.png" />}
+        {!props.dark && <img src="/Light-M.png" />}
+      </div>
+      <IconWrapper dark={props.dark} title={"Home"} tab={"home"} setTab={props.setTab} disabled={false}>
+        {props.tab === "home" && <HomeIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+        {props.tab !== "home" && <OutlineHomeIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+      </IconWrapper>
 
-			{/* Stats Tab */}
-			<div onClick={() => props.setTab("stats")} className={`Stats w-full pt-2 pb-2 flex justify-center items-center shrink-0 pl-2 pr-2 hover:cursor-pointer`}>
-				<div className={`w-full flex space-x-2 items-center shrink-0 pt-1 pb-1 pl-1 hover:bg-brand-green/20 rounded-lg transition-all duration-300 ${props.tab === "dash" ? "bg-brand-green/50 hover:bg-brand-green/50" : ""}`}>
-					<IconContext.Provider
-						value={{
-							size: "2rem",
-							className: `${props.dark ? "fill-brand-font" : "fill-brand-black"} transition-all duration-500`,
-						}}>
-						{props.tab === "stats" && <MdDashboard />}
-						{props.tab !== "stats" && <MdOutlineDashboard />}
-					</IconContext.Provider>
-					<h1 className={`font-mt transition-all duration-500 ${props.dark ? "text-brand-font" : "text-brand-black"} font-semibold`}>Stats</h1>
-				</div>
-			</div>
-			{/* Stats Tab */}
+      <IconWrapper dark={props.dark} title={"Stats"} tab={"stats"} setTab={props.setTab} disabled={false}>
+        {props.tab === "stats" && <ChartBarIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+        {props.tab !== "stats" && <OutlineChartBarIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+      </IconWrapper>
 
-			{/* Pages Tab */}
-			<div onClick={() => props.setTab("pages")} className={`Pages w-full pt-2 pb-2 flex justify-center items-center shrink-0 pl-2 pr-2 hover:cursor-pointer`}>
-				<div className={`w-full flex space-x-2 items-center shrink-0 pt-1 pb-1 pl-1 hover:bg-brand-green/20 rounded-lg transition-all duration-300 ${props.tab === "pages" ? "bg-brand-green/50 hover:bg-brand-green/50" : ""}`}>
-					<IconContext.Provider
-						value={{
-							size: "2rem",
-							className: `${props.dark ? "fill-brand-font" : "fill-brand-black"} transition-all duration-500`,
-						}}>
-						{props.tab === "pages" && <RiPagesFill />}
-						{props.tab !== "pages" && <RiPagesLine />}
-					</IconContext.Provider>
-					<h1 className={`font-mt transition-all duration-500 ${props.dark ? "text-brand-font" : "text-brand-black"} font-semibold`}>Pages</h1>
-				</div>
-			</div>
-			{/* Home Tab */}
+      <IconWrapper dark={props.dark} title={"Pages"} tab={"pages"} setTab={props.setTab} disabled={false}>
+        {props.tab === "pages" && <CollectionIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+        {props.tab !== "pages" && <OutlineCollectionIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+      </IconWrapper>
 
-			{/* Pages Tab */}
-			<div onClick={() => props.setTab("contracts")} className={`Contracts w-full pt-2 pb-2 flex justify-center items-center shrink-0 pl-2 pr-2 hover:cursor-pointer`}>
-				<div className={`w-full flex space-x-2 items-center shrink-0 pt-1 pb-1 pl-1 hover:bg-brand-green/20 rounded-lg transition-all duration-300 ${props.tab === "contracts" ? "bg-brand-green/50 hover:bg-brand-green/50" : ""}`}>
-					<IconContext.Provider
-						value={{
-							size: "2rem",
-							className: `${props.dark ? "fill-brand-font" : "fill-brand-black"} transition-all duration-500`,
-						}}>
-						{props.tab === "contracts" && <BsFileCodeFill />}
-						{props.tab !== "contracts" && <BsFileCode />}
-					</IconContext.Provider>
-					<h1 className={`font-mt transition-all duration-500 ${props.dark ? "text-brand-font" : "text-brand-black"} font-semibold`}>Contracts</h1>
-				</div>
-			</div>
-			{/* Home Tab */}
+      <IconWrapper dark={props.dark} title={"Contracts"} tab={"contracts"} setTab={props.setTab} disabled={false}>
+        {props.tab === "contracts" && <TerminalIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+        {props.tab !== "contracts" && <OutlineTerminalIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+      </IconWrapper>
 
-			<div className={`w-[10rem] p-1 absolute bottom-0 flex flex-col shrink-0 justify-center items-center space-y-2`}>
-				<div className={`w-full transition-all duration-500 ${props.dark ? "bg-brand-black" : "bg-brand-font"} flex flex-row justify-center items-end pt-2`}>
-					<h1 className={`${props.dark ? "text-brand-font" : "text-brand-black"}`}>Version 0.1</h1>
-				</div>
-			</div>
-		</div>
-	);
+      <IconWrapper dark={props.dark} title={"Creations"} tab={"creations"} setTab={props.setTab} disabled={false}>
+        {props.tab === "creations" && <PhotographIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+        {props.tab !== "creations" && <OutlinePhotographIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+      </IconWrapper>
+
+      <IconWrapper dark={props.dark} title={"Assets"} tab={"assets"} setTab={props.setTab} disabled={false}>
+        {props.tab === "assets" && <CashIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+        {props.tab !== "assets" && <OutlineCashIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+      </IconWrapper>
+
+      <IconWrapper dark={props.dark} title={"Settings"} tab={"settings"} setTab={props.setTab} disabled={false}>
+        {props.tab === "settings" && <AdjustmentsIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+        {props.tab !== "settings" && <OutlineAdjustmentsIcons className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+      </IconWrapper>
+    </div>
+  );
 };
 
 export default Sidebar;
