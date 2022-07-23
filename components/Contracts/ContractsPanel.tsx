@@ -17,7 +17,7 @@ const ContractsPanel = (props: IContractsPanel) => {
 			<AnimatePresence>
 				{creatingContract && (
 					<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}>
-						<NewContractModal dark={props.dark} setCC={setCC} />
+						<NewContractModal dark={props.dark} setCC={setCreatingContract} />
 					</motion.div>
 				)}
 			</AnimatePresence>
