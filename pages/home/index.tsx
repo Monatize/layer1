@@ -160,6 +160,9 @@ const Home: NextPage = () => {
 		<>
 			{!authenticated && (
 				<div className="w-screen h-screen bg-brand-black">
+					<Head>
+						<title>Authentication - Monatize</title>
+					</Head>
 					<div className="w-full h-full flex flex-col space-y-4 justify-center items-center">
 						<h1 className="text-brand-soft-white font-mt font-bold text-4xl">Please authenticate in order to access the admin panel.</h1>
 						<button onClick={attemptAuthentication} className="p-4 border border-white shadow-light-btn text-brand-soft-white bg-brand-black text-xl font-mt font-medium hover:-translate-y-4 transition-all duration-300">Log in with Web3</button>
@@ -168,6 +171,9 @@ const Home: NextPage = () => {
 			)}
 			{authenticated && (
 				<div className="w-screen h-screen flex">
+					<Head>
+						<title>Monatize</title>
+					</Head>
 					<button onClick={toggleTheme} className="w-16 h-16 hover:scale-125 rounded-full absolute bottom-8 right-8 flex justify-center items-center">
 						<img src="/dot.svg" />
 					</button>

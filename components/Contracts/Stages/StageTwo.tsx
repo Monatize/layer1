@@ -3,8 +3,9 @@ import { EmojiHappyIcon, BadgeCheckIcon, BanIcon, BeakerIcon, BookOpenIcon, Book
 import { EmojiHappyIcon as FilledEmojiHappyIcon, BadgeCheckIcon as FilledBadgeCheckIcon, BanIcon as FilledBanIcon, BeakerIcon as FilledBeakerIcon, BookOpenIcon as FilledBookOpenIcon, BookmarkIcon as FilledBookmarkIcon, CakeIcon as FilledCakeIcon, CalculatorIcon as FilledCalculatorIcon, CashIcon as FilledCashIcon, CalendarIcon as FilledCalendarIcon, CloudUploadIcon as FilledCloudUploadIcon, CodeIcon as FilledCodeIcon, ColorSwatchIcon as FilledColorSwatchIcon, CubeTransparentIcon as FilledCubeTransparentIcon, DatabaseIcon as FilledDatabaseIcon, DocumentTextIcon as FilledDocumentTextIcon, EyeIcon as FilledEyeIcon, GiftIcon as FilledGiftIcon, LightningBoltIcon as FilledLightningBoltIcon, KeyIcon as FilledKeyIcon } from "@heroicons/react/solid";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { motion } from 'framer-motion';
+import Code from "./Code";
 
-interface IStageOne {
+interface IStageTwo {
     setEmojiID: Dispatch<SetStateAction<number>>;
     setContractName: Dispatch<SetStateAction<string>>;
     setContractDescription: Dispatch<SetStateAction<string>>;
@@ -16,7 +17,7 @@ interface IStageOne {
 	dark: boolean;
 }
 
-const StageOne = (props: IStageOne) => {
+const StageTwo = (props: IStageTwo) => {
 	const [emojis, setEmojis] = useState<{ id: number; iconName: string; icon: JSX.Element; selectedIcon: JSX.Element }[]>([]);
 
 	useEffect(() => {
@@ -145,45 +146,16 @@ const StageOne = (props: IStageOne) => {
 	}, []);
 	return (
 		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }} className="w-full h-[calc(100%-6rem)] flex shrink-0 p-8">
-			<div className="w-1/2 h-full flex flex-col space-y-4">
-				<h1 className={`font-mt text-4xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Let&apos;s get some basic info.</h1>
-				<h1 className={`font-mt text-xl ${props.dark ? "text-brand-font" : "text-brand-black"}`}>This won&apos;t take very long</h1>
-
-				<div className="form flex flex-col">
-					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Contract Name</h1>
-					<input value={props.contractName} onChange={e => props.setContractName(e.currentTarget.value)} className={`h-14 w-56 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
-				</div>
-
-				<div className="form flex flex-col">
-					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Contract Description</h1>
-					<textarea value={props.contractDescription} onChange={e => props.setContractDescription(e.currentTarget.value)} className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></textarea>
-				</div>
-
-				<div className="form flex flex-col">
-					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Contract Type</h1>
-					<select value={props.contractType} onChange={e => props.setContractType(e.currentTarget.value)} className={`h-14 w-80 pl-2 pr-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}>
-						<option value="auction">Auction</option>
-						<option value="dutch-auction">Dutch Auction</option>
-						<option value="standard-mint">Standard Mint</option>
-					</select>
-				</div>
+			<div className="w-1/3 h-full flex flex-col space-y-4">
+				<h1 className={`font-mt text-4xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Customize your contract.</h1>
+				<h1 className={`font-mt text-xl ${props.dark ? "text-brand-font" : "text-brand-black"}`}>We&apos;ve done the hard work, just enter some numbers</h1>
 			</div>
 
-			<div className="w-1/2 flex flex-col space-y-4">
-				<h1 className={`font-mt text-4xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Let&apos;s add some style</h1>
-				<h1 className={`font-mt text-xl ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Choose an icon to represent this contract</h1>
-
-				<div className="w-full flex flex-wrap items-center">
-					{emojis.map((emoji) => (
-						<div key={emoji.id} onClick={() => props.setEmojiID(emoji.id)} className={`w-20 h-20 flex items-center hover:cursor-pointer`}>
-							{props.emojiID !== emoji.id && <div className={`w-14 h-14 flex justify-center items-center hover:-translate-y-2 transition-all duration-300 border ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn "}`}>{emoji.icon}</div>}
-							{props.emojiID === emoji.id && <div className={`w-14 h-14 flex justify-center items-center hover:-translate-y-2 transition-all duration-300 border ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn "}`}>{emoji.selectedIcon}</div>}
-						</div>
-					))}
-				</div>
+			<div className="w-2/3 flex flex-col space-y-4">
+				<Code dark={props.dark} contractType={props.contractType} />
 			</div>
 		</motion.div>
 	);
 };
 
-export default StageOne;
+export default StageTwo;
