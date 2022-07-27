@@ -9,6 +9,7 @@ interface IStageOne {
     setContractName: Dispatch<SetStateAction<string>>;
     setContractDescription: Dispatch<SetStateAction<string>>;
     setContractType: Dispatch<SetStateAction<string>>;
+	canGoOn: () => void;
     contractName: string;
     contractDescription: string;
     contractType: string;
@@ -151,12 +152,12 @@ const StageOne = (props: IStageOne) => {
 
 				<div className="form flex flex-col">
 					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Contract Name</h1>
-					<input value={props.contractName} onChange={e => props.setContractName(e.currentTarget.value)} className={`h-14 w-56 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					<input onInput={props.canGoOn} value={props.contractName} onChange={e => props.setContractName(e.currentTarget.value)} className={`h-14 w-56 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
 				</div>
 
 				<div className="form flex flex-col">
 					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Contract Description</h1>
-					<textarea value={props.contractDescription} onChange={e => props.setContractDescription(e.currentTarget.value)} className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></textarea>
+					<textarea onInput={props.canGoOn} value={props.contractDescription} onChange={e => props.setContractDescription(e.currentTarget.value)} className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></textarea>
 				</div>
 
 				<div className="form flex flex-col">

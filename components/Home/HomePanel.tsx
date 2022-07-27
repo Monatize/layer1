@@ -13,7 +13,7 @@ interface IHomePanel {
 const HomePanel = (props: IHomePanel) => {
 	return (
 		<div className="w-full h-full flex flex-col space-y-4 p-6 overflow-y-scroll">
-			<h1 className={`font-mt text-5xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Welcome, {"creator name here"}</h1>
+			<h1 className={`font-mt text-5xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Welcome, Landon</h1>
 			<h1 className={`font-mt text-4xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Tips to get started</h1>
 
 			<TipWrapper dark={props.dark} />

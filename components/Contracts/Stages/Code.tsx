@@ -14,7 +14,7 @@ const Code = (props: ICode) => {
 			<h1 className="font-mt text-lg text-green-400 pb-2">Auction.sol</h1>
 			<div className="w-full h-[2px] bg-green-400" />
 			<div className="w-full flex p-2">
-                <SyntaxHighlighter language="sol" style={dracula} showLineNumbers={true}>
+                <SyntaxHighlighter language="sol" style={dracula} showLineNumbers={true} lineNumberContainerStyle={{ padding: 2 }}>
                     {solCode}
                 </SyntaxHighlighter>
 			</div>

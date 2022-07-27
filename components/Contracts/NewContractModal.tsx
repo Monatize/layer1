@@ -33,13 +33,22 @@ const NewContractModal = (props: INewContractModal) => {
 		return () => document.removeEventListener("keydown", onEscDown);
 	}, []);
 
-	useEffect(() => {
-		if (contractName !== "" && contractDescription !== "" && contractType !== "") {
+	// useEffect(() => {
+	// 	if (contractName !== "" && contractDescription !== "" && contractType !== "") {
+	// 		setCMFSO(true);
+	// 	} else {
+	// 		setCMFSO(false);
+	// 	}
+	// });
+
+	const canGoOn = () => {
+		if(contractName !== "" && contractDescription !== "") {
 			setCMFSO(true);
-		} else {
-			setCMFSO(false);
 		}
-	});
+		else {
+			setCMFSO(false)
+		}
+	}
 
 	return (
 		<div onClick={() => props.setCC(false)} className={`absolute w-full h-full min-h-[30rem] top-0 left-0 right-0 bottom-0 flex flex-col space-y-4 justify-center items-center ${props.dark ? "bg-brand-black/90" : "bg-brand-font/75"}`}>
@@ -52,7 +61,7 @@ const NewContractModal = (props: INewContractModal) => {
 			</div>
 			<div onClick={(e) => e.stopPropagation()} className={`w-3/5 min-w-[35rem] h-[700px] p-4 flex flex-col space-y-4 items-center border ${props.dark ? "bg-brand-black border-brand-font shadow-light-btn" : "bg-brand-font border-brand-black shadow-btn"} overflow-y-scroll`}>
 				<ModalStageTracker stage={stage} setStage={setStage} dark={props.dark} />
-				<AnimatePresence>{stage === 1 && <StageOne dark={props.dark} emojiID={emojiID} setEmojiID={setEmojiID} setContractName={setContractName} setContractDescription={setContractDescription} setContractType={setContractType} contractName={contractName} contractDescription={contractDescription} contractType={contractType} />}</AnimatePresence>
+				<AnimatePresence>{stage === 1 && <StageOne dark={props.dark} emojiID={emojiID} setEmojiID={setEmojiID} setContractName={setContractName} setContractDescription={setContractDescription} setContractType={setContractType} contractName={contractName} contractDescription={contractDescription} contractType={contractType} canGoOn={canGoOn} />}</AnimatePresence>
 				<AnimatePresence>{stage === 2 && <StageTwo dark={props.dark} emojiID={emojiID} setEmojiID={setEmojiID} setContractName={setContractName} setContractDescription={setContractDescription} setContractType={setContractType} contractName={contractName} contractDescription={contractDescription} contractType={contractType} />}</AnimatePresence>
 			</div>
 			<div onClick={(e) => e.stopPropagation()} className="w-3/5 min-w-[35rem] h-20 flex">

@@ -14,11 +14,12 @@ import HomePanel from "../../components/Home/HomePanel";
 import StatsPanel from "../../components/Stats/StatsPanel";
 import PagesPanel from "../../components/Pages/PagesPanel";
 import ContractsPanel from "../../components/Contracts/ContractsPanel";
-import CreationsPanel from "../../components/Creations/CreationsPanel";
+import CreationsPanel from "../../components/Assets/AssetsPanel";
 import AssetsPanel from "../../components/Assets/AssetsPanel";
 import SettingsPanel from "../../components/Settings/AssetsPanel";
 import axios from "axios";
 import { ethers } from "ethers";
+import CashPanel from "../../components/Cash/CashPanel";
 // * Panels
 
 declare global {
@@ -185,8 +186,8 @@ const Home: NextPage = () => {
 						{tab === "stats" && <StatsPanel dark={dark} />}
 						{tab === "pages" && <PagesPanel dark={dark} />}
 						{tab === "contracts" && <ContractsPanel dark={dark} />}
-						{tab === "creations" && <CreationsPanel dark={dark} />}
 						{tab === "assets" && <AssetsPanel dark={dark} />}
+						{tab === "cash" && <CashPanel dark={dark} />}
 						{tab === "settings" && <SettingsPanel dark={dark} />}
 					</div>
 				</div>

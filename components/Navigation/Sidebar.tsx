@@ -56,14 +56,14 @@ const Sidebar = (props: ISidebar) => {
         {props.tab !== "contracts" && <OutlineTerminalIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
       </IconWrapper>
 
-      <IconWrapper dark={props.dark} title={"Creations"} tab={"creations"} setTab={props.setTab} disabled={false}>
-        {props.tab === "creations" && <PhotographIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
-        {props.tab !== "creations" && <OutlinePhotographIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+      <IconWrapper dark={props.dark} title={"Assets"} tab={"assets"} setTab={props.setTab} disabled={false}>
+        {props.tab === "assets" && <PhotographIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+        {props.tab !== "assets" && <OutlinePhotographIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
       </IconWrapper>
 
-      <IconWrapper dark={props.dark} title={"Assets"} tab={"assets"} setTab={props.setTab} disabled={false}>
-        {props.tab === "assets" && <CashIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
-        {props.tab !== "assets" && <OutlineCashIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+      <IconWrapper dark={props.dark} title={"Cash"} tab={"cash"} setTab={props.setTab} disabled={false}>
+        {props.tab === "cash" && <CashIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+        {props.tab !== "cash" && <OutlineCashIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
       </IconWrapper>
 
       <IconWrapper dark={props.dark} title={"Settings"} tab={"settings"} setTab={props.setTab} disabled={false}>
