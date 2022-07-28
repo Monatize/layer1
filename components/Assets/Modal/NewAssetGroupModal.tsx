@@ -4,8 +4,8 @@ import { EmojiHappyIcon as FilledEmojiHappyIcon, BadgeCheckIcon as FilledBadgeCh
 import { AnimatePresence } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import ModalStageTracker from "./ModalStageTracker";
-import StageOne from "./Stages/StageOne";
-import StageTwo from "./Stages/StageTwo";
+import StageOne from "./Stages/Create";
+import StageTwo from "./Stages/Upload";
 
 interface INewAssetGroupModal {
 	dark: boolean;

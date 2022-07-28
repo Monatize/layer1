@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NewAssetGroupModal from "./NewAssetGroupModal";
+import NewAssetGroupModal from "./Modal/NewAssetGroupModal";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface IAssetsPanel {
