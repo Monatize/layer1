@@ -5,6 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import ModalStageTracker from "./ModalStageTracker";
 import StageOne from "./Stages/Create";
+import Finish from "./Stages/Finish";
 import StageTwo from "./Stages/Upload";
 
 interface INewAssetGroupModal {
@@ -18,6 +19,7 @@ const NewAssetGroupModal = (props: INewAssetGroupModal) => {
 
 	const [assetGroupName, setAssetGroupName] = useState("");
 	const [assetGroupDesc, setAssetGroupDesc] = useState("");
+	const [assetCount,setAssetCount] = useState(0);
 
 	const [canMoveFromStageOne, setCMFSO] = useState(false);
 	useEffect(() => {
@@ -53,7 +55,8 @@ const NewAssetGroupModal = (props: INewAssetGroupModal) => {
 			<div onClick={(e) => e.stopPropagation()} className={`w-3/5 min-w-[35rem] h-[700px] p-4 flex flex-col space-y-4 items-center border ${props.dark ? "bg-brand-black border-brand-font shadow-light-btn" : "bg-brand-font border-brand-black shadow-btn"} overflow-y-scroll`}>
 				<ModalStageTracker stage={stage} setStage={setStage} dark={props.dark} />
 				<AnimatePresence>{stage === 1 && <StageOne dark={props.dark} emojiID={emojiID} setEmojiID={setEmojiID} setAssetGroupName={setAssetGroupName} setAssetGroupDesc={setAssetGroupDesc} assetGroupName={assetGroupName} assetGroupDesc={assetGroupDesc} canGoOn={canGoOn} />}</AnimatePresence>
-				<AnimatePresence>{stage === 2 && <StageTwo dark={props.dark} />}</AnimatePresence>
+				<AnimatePresence>{stage === 2 && <StageTwo dark={props.dark} setAssetCount={setAssetCount} />}</AnimatePresence>
+				<AnimatePresence>{stage === 3 && <Finish dark={props.dark} assetGroupName={assetGroupName} assetGroupDescription={assetGroupDesc} assetCount={assetCount} />}</AnimatePresence>
 			</div>
 			<div onClick={(e) => e.stopPropagation()} className="w-3/5 min-w-[35rem] h-20 flex">
 				<div className="w-1/2 h-full flex items-center">
@@ -64,7 +67,8 @@ const NewAssetGroupModal = (props: INewAssetGroupModal) => {
 					)}
 				</div>
 				<div className="w-1/2 h-full flex items-center justify-end">
-					<div
+					{stage !== 3 && (
+						<div
 						onClick={() => {
 							if (canMoveFromStageOne) {
 								setStage(stage + 1);
@@ -73,6 +77,17 @@ const NewAssetGroupModal = (props: INewAssetGroupModal) => {
 						className={`w-52 h-16 font-mt font-bold text-4xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"} ${canMoveFromStageOne ? "hover:-translate-y-2 cursor-pointer" : "cursor-not-allowed"} transition-all duration-300 flex justify-center items-center`}>
 						Next
 					</div>
+					)}
+					{stage === 3 && (
+						<div
+						onClick={() => {
+							props.setCAG(false);
+						}}
+						className={`w-52 h-16 font-mt font-bold text-4xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"} ${canMoveFromStageOne ? "hover:-translate-y-2 cursor-pointer" : "cursor-not-allowed"} transition-all duration-300 flex justify-center items-center`}>
+						Finish
+					</div>
+					)}
+					
 				</div>
 			</div>
 		</div>

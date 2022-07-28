@@ -142,8 +142,8 @@ const StageOne = (props: IStageOne) => {
 		]);
 	}, []);
 	return (
-		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }} className="w-full h-[calc(100%-6rem)] flex shrink-0 p-8">
-			<div className="w-1/2 h-full flex flex-col space-y-4">
+		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }} className="w-full h-[calc(100%-6rem)] flex flex-col space-y-4 xl:flex-row xl:space-y-0 shrink-0 p-8">
+			<div className="w-full xl:w-1/2 h-full flex flex-col space-y-4">
 				<h1 className={`font-mt text-4xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Let&apos;s get started.</h1>
 				<h1 className={`font-mt text-xl ${props.dark ? "text-brand-font" : "text-brand-black"}`}>You&apos;re close to uploading some creations!</h1>
 
@@ -158,7 +158,7 @@ const StageOne = (props: IStageOne) => {
 				</div>
 			</div>
 
-			<div className="w-1/2 flex flex-col space-y-4">
+			<div className="w-full xl:w-1/2 flex flex-col space-y-4">
 				<h1 className={`font-mt text-4xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Let&apos;s add some style</h1>
 				<h1 className={`font-mt text-xl ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Choose an icon to represent this asset group</h1>
 
