@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NewContractModal from "../Contracts/NewContractModal";
+import NewAssetGroupModal from "./NewAssetGroupModal";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface IAssetsPanel {
@@ -7,17 +7,17 @@ interface IAssetsPanel {
 }
 
 const AssetsPanel = (props: IAssetsPanel) => {
-	const [creatingContract, setCreatingContract] = useState(false);
+	const [creatingAG, setCreatingAG] = useState(false);
 
 	const setCC = () => {
-		setCreatingContract(!creatingContract);
+		setCreatingAG(!creatingAG);
 	};
 	return (
 		<div className="w-full h-full flex flex-col p-6 overflow-y-scroll">
 			<AnimatePresence>
-				{creatingContract && (
+				{creatingAG && (
 					<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}>
-						<NewContractModal dark={props.dark} setCC={setCreatingContract} />
+						<NewAssetGroupModal dark={props.dark} setCAG={setCreatingAG} />
 					</motion.div>
 				)}
 			</AnimatePresence>
@@ -29,8 +29,8 @@ const AssetsPanel = (props: IAssetsPanel) => {
 					<h1 className={`font-mt text-xl font-bold text-pink-500`}>0 live on <span className="text-pink-500">Pinata.Cloud</span></h1>
 
 				</div>
-				<motion.button onClick={() => setCreatingContract(true)} whileTap={{ scale: 1.1 }} className={`w-44 h-12 font-mt text-lg font-bold border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}>
-					New Contract
+				<motion.button onClick={() => setCreatingAG(true)} whileTap={{ scale: 1.1 }} className={`w-44 h-12 font-mt text-lg font-bold border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}>
+					New Group
 				</motion.button>
 			</div>
 		</div>

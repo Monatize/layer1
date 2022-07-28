@@ -10,17 +10,17 @@ const News = (props: INews) => {
 		setNews([
 			{
 				id: 0,
-				title: "Blockfi goes insolvent as crypto bear market enters 69th day",
-				description: "Crypto lending firm Blockfi announced earlier today that they would be pausing withdrawls as news comes out that they are in negotiations with crypto trading platform, FTX.",
-				img: "https://masterthecrypto.com/wp-content/uploads/2019/10/BlockFi.jpg",
-				source: "https://google.com",
+				title: "Epic Games CEO Tim Sweeney Refuses to Ban NFTs on Epic Games Store",
+				description: "Tim Sweeney has made his position clear on the subject of banning NFTs on his Epic Games Store: “definitely not”.",
+				img: "https://nftnewstoday.com/wp-content/uploads/2022/07/epic-games-696x392.jpg",
+				source: "https://nftnewstoday.com/2022/07/24/epic-games-ceo-tim-sweeney-refuses-to-ban-nfts-on-epic-games-store/",
 			},
 			{
 				id: 1,
-				title: "Robinhood set to close their doors in 2022",
-				description: "A platform that pioneered the way for fractional investing, Robinhood, announced early Tuesday they would be closing their doors.",
-				img: "https://d1e00ek4ebabms.cloudfront.net/production/b57e07db-82a4-43ef-be64-a15c45b31804.jpg",
-				source: "https://google.com",
+				title: "NFT market to hit the $231B mark by 2030?",
+				description: "According to a new research report published by Verified Market Research, a global analysis and consulting agency, the fast-growing NFT market is on its way to hit the $231 billion mark by 2030. According to the same report, the market currently stands at $11.3 billion.",
+				img: "https://nftnewstoday.com/wp-content/uploads/2022/07/market-report-696x392.png",
+				source: "https://nftnewstoday.com/2022/07/22/nft-market-to-hit-the-231b-mark-by-2030/",
 			},
 			{
 				id: 2,

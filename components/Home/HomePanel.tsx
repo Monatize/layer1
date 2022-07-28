@@ -1,9 +1,6 @@
-import { GlobeAltIcon, CollectionIcon, TerminalIcon, AdjustmentsIcon, ChartBarIcon, PhotographIcon, CashIcon } from "@heroicons/react/solid";
-import News from "./News";
+import TipWrapper from "./TipWrapper";
 import NewsWrapper from "./NewsWrapper";
 import QuickActionsWrapper from "./QuickActionsWrapper";
-import Tip from "./Tip";
-import TipWrapper from "./TipWrapper";
 
 interface IHomePanel {
 	dark: boolean;

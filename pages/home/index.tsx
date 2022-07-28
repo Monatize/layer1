@@ -1,9 +1,12 @@
-// * React/Next
+// * React/Next/Libs
 import { NextPage } from "next";
 
 import Head from "next/head";
 import { useEffect, useState } from "react";
-// * React/Next
+
+import axios from "axios";
+import { ethers } from "ethers";
+// * React/Next/Libs
 
 // * Navigation
 import Sidebar from "../../components/Navigation/Sidebar";
@@ -14,12 +17,9 @@ import HomePanel from "../../components/Home/HomePanel";
 import StatsPanel from "../../components/Stats/StatsPanel";
 import PagesPanel from "../../components/Pages/PagesPanel";
 import ContractsPanel from "../../components/Contracts/ContractsPanel";
-import CreationsPanel from "../../components/Assets/AssetsPanel";
 import AssetsPanel from "../../components/Assets/AssetsPanel";
-import SettingsPanel from "../../components/Settings/AssetsPanel";
-import axios from "axios";
-import { ethers } from "ethers";
 import CashPanel from "../../components/Cash/CashPanel";
+import SettingsPanel from "../../components/Settings/SettingsPanel";
 // * Panels
 
 declare global {
