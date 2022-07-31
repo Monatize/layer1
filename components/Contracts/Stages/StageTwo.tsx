@@ -2,18 +2,18 @@ import { EmojiHappyIcon, BadgeCheckIcon, BanIcon, BeakerIcon, BookOpenIcon, Book
 
 import { EmojiHappyIcon as FilledEmojiHappyIcon, BadgeCheckIcon as FilledBadgeCheckIcon, BanIcon as FilledBanIcon, BeakerIcon as FilledBeakerIcon, BookOpenIcon as FilledBookOpenIcon, BookmarkIcon as FilledBookmarkIcon, CakeIcon as FilledCakeIcon, CalculatorIcon as FilledCalculatorIcon, CashIcon as FilledCashIcon, CalendarIcon as FilledCalendarIcon, CloudUploadIcon as FilledCloudUploadIcon, CodeIcon as FilledCodeIcon, ColorSwatchIcon as FilledColorSwatchIcon, CubeTransparentIcon as FilledCubeTransparentIcon, DatabaseIcon as FilledDatabaseIcon, DocumentTextIcon as FilledDocumentTextIcon, EyeIcon as FilledEyeIcon, GiftIcon as FilledGiftIcon, LightningBoltIcon as FilledLightningBoltIcon, KeyIcon as FilledKeyIcon } from "@heroicons/react/solid";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import Code from "./Code";
 
 interface IStageTwo {
-    setEmojiID: Dispatch<SetStateAction<number>>;
-    setContractName: Dispatch<SetStateAction<string>>;
-    setContractDescription: Dispatch<SetStateAction<string>>;
-    setContractType: Dispatch<SetStateAction<string>>;
-    contractName: string;
-    contractDescription: string;
-    contractType: string;
-    emojiID: number;
+	setEmojiID: Dispatch<SetStateAction<number>>;
+	setContractName: Dispatch<SetStateAction<string>>;
+	setContractDescription: Dispatch<SetStateAction<string>>;
+	setContractType: Dispatch<SetStateAction<string>>;
+	contractName: string;
+	contractDescription: string;
+	contractType: string;
+	emojiID: number;
 	dark: boolean;
 }
 
@@ -145,15 +145,174 @@ const StageTwo = (props: IStageTwo) => {
 		]);
 	}, []);
 	return (
-		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }} className="w-full h-[calc(100%-6rem)] flex shrink-0 p-8">
-			<div className="w-1/3 h-full flex flex-col space-y-4">
-				<h1 className={`font-mt text-4xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Customize your contract.</h1>
-				<h1 className={`font-mt text-xl ${props.dark ? "text-brand-font" : "text-brand-black"}`}>We&apos;ve done the hard work, just enter some numbers</h1>
-			</div>
+		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }} className="w-full h-[calc(100%-6rem)] flex flex-col shrink-0 p-8">
+			<div className="w-full h-full flex flex-row shrink-0">
+				<div className="w-1/3 flex flex-col space-y-4 shrink-0">
+					<div className="w-full flex flex-col space-y-2 items-center p-2">
+						<h1 className="font-mt font-bold text-3xl text-brand-black">General Info</h1>
+						<div className="w-full h-2 bg-brand-black"></div>
+					</div>
 
-			<div className="w-2/3 flex flex-col space-y-4">
-				<Code dark={props.dark} contractType={props.contractType} />
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND" className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Asset Group</h1>
+						<select placeholder="$SAND" className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}>
+							<option value="group1">Group 1</option>
+							<option value="group2">Group 2</option>
+							<option value="group3">Group 3</option>
+							<option value="group4">Group 4</option>
+							<option value="group5">Group 5</option>
+
+						</select>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND" className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+				</div>
+
+				<div className="w-1/3 flex flex-col space-y-4 shrink-0">
+					<div className="w-full flex flex-col space-y-2 items-center p-2">
+						<h1 className="font-mt font-bold text-3xl text-brand-black">General Info</h1>
+						<div className="w-full h-2 bg-brand-black"></div>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+				</div>
+
+				<div className="w-1/3 flex flex-col space-y-4 shrink-0">
+					<div className="w-full flex flex-col space-y-2 items-center p-2">
+						<h1 className="font-mt font-bold text-3xl text-brand-black">General Info</h1>
+						<div className="w-full h-2 bg-brand-black"></div>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+				</div>
+
+				<div className="w-1/3 flex flex-col space-y-4 shrink-0">
+					<div className="w-full flex flex-col space-y-2 items-center p-2">
+						<h1 className="font-mt font-bold text-3xl text-brand-black">General Info</h1>
+						<div className="w-full h-2 bg-brand-black"></div>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+
+					<div className="form flex flex-col">
+						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+						<input placeholder="$SAND"  className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					</div>
+				</div>
 			</div>
+			{/* <div className="w-1/3 h-full flex flex-col space-y-4">
+				<h1 className={`font-mt text-4xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Customize your contract.</h1>
+				<h1 className={`font-mt text-xl ${props.dark ? "text-brand-font" : "text-brand-black"}`}>We&apos;ve done the hard work, just enter some info</h1>
+
+				<div className="form flex flex-col">
+					<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Token Ticker</h1>
+					<input placeholder="$SAND" value={props.contractDescription} onChange={e => props.setContractDescription(e.currentTarget.value)} className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+				</div>
+
+				<div className="form flex flex-col">
+					<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Mint Price</h1>
+					<input placeholder="0.1 ETH" value={props.contractDescription} onChange={e => props.setContractDescription(e.currentTarget.value)} className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+				</div>
+
+				<div className="form flex flex-col">
+					<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Mint Price</h1>
+					<input placeholder="0.1 ETH" value={props.contractDescription} onChange={e => props.setContractDescription(e.currentTarget.value)} className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+				</div>
+				<div className="form flex flex-col">
+					<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Mint Price</h1>
+					<input placeholder="0.1 ETH" value={props.contractDescription} onChange={e => props.setContractDescription(e.currentTarget.value)} className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+				</div>
+				<div className="form flex flex-col">
+					<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Mint Price</h1>
+					<input placeholder="0.1 ETH" value={props.contractDescription} onChange={e => props.setContractDescription(e.currentTarget.value)} className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+				</div>
+			</div> */}
+
+			{/* <div className="w-2/3 flex flex-col space-y-4">
+				<Code dark={props.dark} contractType={props.contractType} />
+			</div> */}
 		</motion.div>
 	);
 };

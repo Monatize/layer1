@@ -68,7 +68,7 @@ const StageTwo = (props: IStageTwo) => {
 				const validFileTypes = ["image/png", "image/jpg", "image/jpeg", "video/mp4", "video/quicktime"];
 				Array.from(files).forEach((photo, index) => {
 					console.log(photo.type);
-					if(validFileTypes.includes(photo.type)) {
+					if (validFileTypes.includes(photo.type)) {
 						setAssets((assets) => [
 							...assets,
 							{
@@ -77,11 +77,9 @@ const StageTwo = (props: IStageTwo) => {
 								url: URL.createObjectURL(photo),
 							},
 						]);
-					}
-					else {
+					} else {
 						console.log("illegal type");
 					}
-					
 				});
 			}
 		};
@@ -105,7 +103,8 @@ const StageTwo = (props: IStageTwo) => {
 	});
 
 	return (
-		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }} className="w-full h-[calc(100%-6rem)] flex shrink-0 p-8">
+		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }} className="w-full h-[calc(100%-6rem)] flex flex-col shrink-0 p-8">
+			<h1 className={`font-mt font-semibold text-lg ${props.dark ? 'text-brand-font' : 'text-brand-black'}`}>You'll be able to edit <span className="text-pink-500">metadata, odds, and more</span> after the group is created.</h1>
 			<div onClick={browseFiles} ref={dragAndDrop} className={`w-full h-full relative border flex flex-col ${assets.length > 0 ? "justify-start" : "justify-center"} items-center hover:cursor-pointer ${props.dark ? "border-brand-font shadow-light-btn" : "border-brand-black shadow-btn"}`}>
 				<input type="file" accept="image/png, image/jpeg, image/jpg, .mp4, .mov, .mp3" ref={inputFiles} id="file" className="w-full h-full hidden" onChange={doTheThing} multiple />
 				{hovering && <div ref={dragOverlay} className="absolute w-full h-full bg-green-500/50"></div>}
@@ -113,16 +112,24 @@ const StageTwo = (props: IStageTwo) => {
 					<div className="w-full flex flex-wrap overflow-y-scroll">
 						{assets.map((asset) => (
 							<div key={asset.fileName} className="w-52 h-52 flex shrink-0 justify-center items-center">
-								{asset.type === "image/jpeg" && <div onClick={(e) => e.stopPropagation()} style={{ backgroundImage: `url(${asset.url})` }} className={`w-48 h-48 bg-contain border hover:cursor-default ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn"} `}></div>}
-								{asset.type === "image/png" && <div onClick={(e) => e.stopPropagation()} style={{ backgroundImage: `url(${asset.url})` }} className={`w-48 h-48 bg-contain border hover:cursor-default ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn"} `}></div>}
+								{asset.type === "image/jpeg" && (
+									<div onClick={(e) => e.stopPropagation()} style={{ backgroundImage: `url(${asset.url})` }} className={`w-48 h-48 bg-contain border hover:cursor-default ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn"} `}>
+										<div></div>
+									</div>
+								)}
+								{asset.type === "image/png" && (
+									<div onClick={(e) => e.stopPropagation()} style={{ backgroundImage: `url(${asset.url})` }} className={`w-48 h-48 bg-contain border hover:cursor-default ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn"} `}>
+										<div></div>
+									</div>
+								)}
 								{asset.type === "video/mp4" && (
 									<div onClick={(e) => e.stopPropagation()} className={`w-48 h-48 flex flex-col justify-center items-center border hover:cursor-default ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn"} `}>
-										<video autoPlay src={asset.url} controls itemType="video/mp4" className="w-full h-full" />
+										<video  src={asset.url} controls itemType="video/mp4" className="w-full h-full" />
 									</div>
 								)}
 								{asset.type === "video/quicktime" && (
 									<div onClick={(e) => e.stopPropagation()} className={`w-48 h-48 flex flex-col justify-center items-center border hover:cursor-default ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn"} `}>
-										<video autoPlay src={asset.url} controls itemType="video/quicktime" className="w-full h-full" />
+										<video  src={asset.url} controls itemType="video/quicktime" className="w-full h-full" />
 									</div>
 								)}
 							</div>

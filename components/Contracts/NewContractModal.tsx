@@ -52,19 +52,19 @@ const NewContractModal = (props: INewContractModal) => {
 
 	return (
 		<div onClick={() => props.setCC(false)} className={`absolute w-full h-full min-h-[30rem] top-0 left-0 right-0 bottom-0 flex flex-col space-y-4 justify-center items-center ${props.dark ? "bg-brand-black/90" : "bg-brand-font/75"}`}>
-			<div onClick={(e) => e.stopPropagation()} className="w-3/5 min-w-[35rem] h-20 flex">
+			<div onClick={(e) => e.stopPropagation()} className="w-3/4 min-w-[35rem] h-20 flex">
 				<div className="w-1/2 h-full flex items-center">
 					<div onClick={() => props.setCC(false)} className={`w-24 h-16 font-mt font-bold text-4xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font bg-brand-black" : "border-brand-black shadow-sm-btn text-brand-black bg-brand-font"} hover:-translate-y-2 cursor-pointer transition-all duration-300 flex justify-center items-center`}>
 						X
 					</div>
 				</div>
 			</div>
-			<div onClick={(e) => e.stopPropagation()} className={`w-3/5 min-w-[35rem] h-[700px] p-4 flex flex-col space-y-4 items-center border ${props.dark ? "bg-brand-black border-brand-font shadow-light-btn" : "bg-brand-font border-brand-black shadow-btn"} overflow-y-scroll`}>
+			<div onClick={(e) => e.stopPropagation()} className={`w-3/4 min-w-[35rem] h-[700px] p-4 flex flex-col space-y-4 items-center border ${props.dark ? "bg-brand-black border-brand-font shadow-light-btn" : "bg-brand-font border-brand-black shadow-btn"} overflow-y-scroll`}>
 				<ModalStageTracker stage={stage} setStage={setStage} dark={props.dark} />
 				<AnimatePresence>{stage === 1 && <StageOne dark={props.dark} emojiID={emojiID} setEmojiID={setEmojiID} setContractName={setContractName} setContractDescription={setContractDescription} setContractType={setContractType} contractName={contractName} contractDescription={contractDescription} contractType={contractType} canGoOn={canGoOn} />}</AnimatePresence>
 				<AnimatePresence>{stage === 2 && <StageTwo dark={props.dark} emojiID={emojiID} setEmojiID={setEmojiID} setContractName={setContractName} setContractDescription={setContractDescription} setContractType={setContractType} contractName={contractName} contractDescription={contractDescription} contractType={contractType} />}</AnimatePresence>
 			</div>
-			<div onClick={(e) => e.stopPropagation()} className="w-3/5 min-w-[35rem] h-20 flex">
+			<div onClick={(e) => e.stopPropagation()} className="w-3/4 min-w-[35rem] h-20 flex">
 				<div className="w-1/2 h-full flex items-center">
 					{stage > 1 && (
 						<div onClick={() => setStage(stage - 1)} className={`w-52 h-16 font-mt font-bold text-4xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"} hover:-translate-y-2 cursor-pointer transition-all duration-300 flex justify-center items-center`}>

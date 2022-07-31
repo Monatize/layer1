@@ -83,13 +83,13 @@ const Home: NextPage = () => {
 		if (authToken) {
 			console.log("Auth token found - authenticating");
 			// - Implies there was a token - now we query the authentication microservice using axios
-			const authQuery = await axios.post("http://localhost:3001/authentication", {
+			const authQuery = await axios.post("http://50.18.41.29:3001/authentication", {
 				token: authToken,
 				address,
 			});
 
 			if(authQuery.status === 200) {
-				const storeQuery = await axios.get(`http://localhost:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`);
+				const storeQuery = await axios.get(`http://50.18.41.29:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`);
 				if(storeQuery.data.creator === address) {
 					console.log("Address matched address for store");
 					setAuthenticated(true);
@@ -101,14 +101,14 @@ const Home: NextPage = () => {
 			else if(authQuery.status === 401) {
 				const message = getMessage(address);
 				const signature = await signer.signMessage(message.message);
-				const entryQuery = await axios.post("http://localhost:3001/entry", {
+				const entryQuery = await axios.post("http://50.18.41.29:3001/entry", {
 					address,
 					signature,
 					nonce: message.nonce
 				});
 				
 				if(entryQuery.status === 200) {
-					const storeQuery = await axios.get(`http://localhost:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`);
+					const storeQuery = await axios.get(`http://50.18.41.29:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`);
 					if(storeQuery.data.creator === address) {
 						console.log("Address matched address for store");
 						localStorage.setItem("token", entryQuery.data.identifier);
@@ -129,14 +129,14 @@ const Home: NextPage = () => {
 		} else {
 			const message = getMessage(address);
 			const signature = await signer.signMessage(message.message);
-			const entryQuery = await axios.post("http://localhost:3001/entry", {
+			const entryQuery = await axios.post("http://50.18.41.29:3001/entry", {
 				address,
 				signature,
 				nonce: message.nonce
 			});
 
 			if(entryQuery.status === 200) {
-				const storeQuery = await axios.get(`http://localhost:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`);
+				const storeQuery = await axios.get(`http://50.18.41.29:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`);
 				if(storeQuery.data.creator === address) {
 					console.log("Address matched address for store");
 					localStorage.setItem("token", entryQuery.data.identifier);
