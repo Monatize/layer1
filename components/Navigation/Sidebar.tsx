@@ -31,7 +31,7 @@ interface ISidebar {
 
 const Sidebar = (props: ISidebar) => {
   return (
-    <div className={`w-full h-full border ${props.dark ? 'border-brand-soft-white shadow-light-btn' : 'border-brand-black shadow-btn'} transition-all duration-500 overflow-y-scroll`}>
+    <div className={`w-full h-full border rounded-lg ${props.dark ? 'border-brand-soft-white shadow-light-btn' : 'border-brand-black shadow-btn'} transition-all duration-500 overflow-y-scroll`}>
       <div className="w-full transition-all duration-500">
         {props.dark && <img src="/Dark-M.png" />}
         {!props.dark && <img src="/Light-M.png" />}
@@ -46,6 +46,11 @@ const Sidebar = (props: ISidebar) => {
         {props.tab !== "stats" && <OutlineChartBarIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
       </IconWrapper>
 
+      <IconWrapper dark={props.dark} title={"Assets"} tab={"assets"} setTab={props.setTab} disabled={false}>
+        {props.tab === "assets" && <PhotographIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+        {props.tab !== "assets" && <OutlinePhotographIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
+      </IconWrapper>
+      
       <IconWrapper dark={props.dark} title={"Pages"} tab={"pages"} setTab={props.setTab} disabled={false}>
         {props.tab === "pages" && <CollectionIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
         {props.tab !== "pages" && <OutlineCollectionIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
@@ -54,16 +59,6 @@ const Sidebar = (props: ISidebar) => {
       <IconWrapper dark={props.dark} title={"Contracts"} tab={"contracts"} setTab={props.setTab} disabled={false}>
         {props.tab === "contracts" && <TerminalIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
         {props.tab !== "contracts" && <OutlineTerminalIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
-      </IconWrapper>
-
-      <IconWrapper dark={props.dark} title={"Assets"} tab={"assets"} setTab={props.setTab} disabled={false}>
-        {props.tab === "assets" && <PhotographIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
-        {props.tab !== "assets" && <OutlinePhotographIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
-      </IconWrapper>
-
-      <IconWrapper dark={props.dark} title={"Cash"} tab={"cash"} setTab={props.setTab} disabled={false}>
-        {props.tab === "cash" && <CashIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
-        {props.tab !== "cash" && <OutlineCashIcon className={`w-10 h-10 ${props.dark ? 'text-brand-soft-white' : 'text-brand-black' }`} />}
       </IconWrapper>
 
       <IconWrapper dark={props.dark} title={"Settings"} tab={"settings"} setTab={props.setTab} disabled={false}>

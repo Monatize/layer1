@@ -18,7 +18,6 @@ import StatsPanel from "../../components/Stats/StatsPanel";
 import PagesPanel from "../../components/Pages/PagesPanel";
 import ContractsPanel from "../../components/Contracts/ContractsPanel";
 import AssetsPanel from "../../components/Assets/AssetsPanel";
-import CashPanel from "../../components/Cash/CashPanel";
 import SettingsPanel from "../../components/Settings/SettingsPanel";
 // * Panels
 
@@ -175,9 +174,6 @@ const Home: NextPage = () => {
 					<Head>
 						<title>Monatize</title>
 					</Head>
-					<button onClick={toggleTheme} className="w-16 h-16 hover:scale-125 rounded-full absolute bottom-8 right-8 flex justify-center items-center">
-						<img src="/dot.svg" />
-					</button>
 					<div className={`w-[15rem] h-full p-6 ${dark ? "bg-brand-black" : "bg-brand-soft-white"} transition-all duration-500`}>
 						<Sidebar dark={dark} tab={tab} toggleTheme={toggleTheme} setTab={setNewTab} />
 					</div>
@@ -187,7 +183,6 @@ const Home: NextPage = () => {
 						{tab === "pages" && <PagesPanel dark={dark} />}
 						{tab === "contracts" && <ContractsPanel dark={dark} />}
 						{tab === "assets" && <AssetsPanel dark={dark} />}
-						{tab === "cash" && <CashPanel dark={dark} />}
 						{tab === "settings" && <SettingsPanel dark={dark} />}
 					</div>
 				</div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import NewContractModal from "../Contracts/NewContractModal";
+import NewContractModal from "./NewContractModal";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface IPagesPanel {
@@ -28,7 +28,7 @@ const PagesPanel = (props: IPagesPanel) => {
 					<h1 className={`font-mt text-xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>0 created</h1>
 					<h1 className={`font-mt text-xl font-bold text-green-500`}>0 deployed</h1>
 				</div>
-				<motion.button onClick={() => setCreatingContract(true)} whileTap={{ scale: 1.1 }} className={`w-44 h-12 font-mt text-lg font-bold border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}>
+				<motion.button onClick={() => setCreatingContract(true)} whileTap={{ scale: 1.1 }} className={`w-44 h-12 rounded-xl font-mt text-lg font-bold border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}>
 					New Contract
 				</motion.button>
 			</div>

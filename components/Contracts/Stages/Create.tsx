@@ -4,7 +4,7 @@ import { EmojiHappyIcon as FilledEmojiHappyIcon, BadgeCheckIcon as FilledBadgeCh
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { motion } from 'framer-motion';
 
-interface IStageOne {
+interface ICreate {
     setEmojiID: Dispatch<SetStateAction<number>>;
     setContractName: Dispatch<SetStateAction<string>>;
     setContractDescription: Dispatch<SetStateAction<string>>;
@@ -17,7 +17,7 @@ interface IStageOne {
 	dark: boolean;
 }
 
-const StageOne = (props: IStageOne) => {
+const Create = (props: ICreate) => {
 	const [emojis, setEmojis] = useState<{ id: number; iconName: string; icon: JSX.Element; selectedIcon: JSX.Element }[]>([]);
 
 	useEffect(() => {
@@ -152,17 +152,17 @@ const StageOne = (props: IStageOne) => {
 
 				<div className="form flex flex-col">
 					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Contract Name</h1>
-					<input onInput={props.canGoOn} value={props.contractName} onChange={e => props.setContractName(e.currentTarget.value)} className={`h-14 w-56 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					<input onInput={props.canGoOn} value={props.contractName} onChange={e => props.setContractName(e.currentTarget.value)} className={`h-14 w-56 rounded-xl pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
 				</div>
 
 				<div className="form flex flex-col">
 					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Contract Description</h1>
-					<textarea onInput={props.canGoOn} value={props.contractDescription} onChange={e => props.setContractDescription(e.currentTarget.value)} className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></textarea>
+					<textarea onInput={props.canGoOn} value={props.contractDescription} onChange={e => props.setContractDescription(e.currentTarget.value)} className={`h-14 w-80 rounded-xl pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></textarea>
 				</div>
 
 				<div className="form flex flex-col">
 					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Contract Type</h1>
-					<select value={props.contractType} onChange={e => props.setContractType(e.currentTarget.value)} className={`h-14 w-80 pl-2 pr-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}>
+					<select value={props.contractType} onChange={e => props.setContractType(e.currentTarget.value)} className={`h-14 w-80 rounded-xl pl-2 pr-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}>
 						<option value="auction">Auction</option>
 						<option value="dutch-auction">Dutch Auction</option>
 						<option value="standard-mint">Standard Mint</option>
@@ -177,8 +177,8 @@ const StageOne = (props: IStageOne) => {
 				<div className="w-full flex flex-wrap items-center">
 					{emojis.map((emoji) => (
 						<div key={emoji.id} onClick={() => props.setEmojiID(emoji.id)} className={`w-20 h-20 flex items-center hover:cursor-pointer`}>
-							{props.emojiID !== emoji.id && <div className={`w-14 h-14 flex justify-center items-center hover:-translate-y-2 transition-all duration-300 border ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn "}`}>{emoji.icon}</div>}
-							{props.emojiID === emoji.id && <div className={`w-14 h-14 flex justify-center items-center hover:-translate-y-2 transition-all duration-300 border ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn "}`}>{emoji.selectedIcon}</div>}
+							{props.emojiID !== emoji.id && <div className={`w-14 h-14 rounded-xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 border ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn "}`}>{emoji.icon}</div>}
+							{props.emojiID === emoji.id && <div className={`w-14 h-14 rounded-xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 border ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn "}`}>{emoji.selectedIcon}</div>}
 						</div>
 					))}
 				</div>
@@ -187,4 +187,4 @@ const StageOne = (props: IStageOne) => {
 	);
 };
 
-export default StageOne;
+export default Create;

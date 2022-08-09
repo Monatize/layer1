@@ -52,21 +52,11 @@ const NewContractModal = (props: INewContractModal) => {
 			</div>
 			<div onClick={(e) => e.stopPropagation()} className="w-3/4 min-w-[35rem] h-20 flex">
 				<div className="w-1/2 h-full flex items-center">
-					{stage > 1 && (
-						<div onClick={() => setStage(stage - 1)} className={`w-52 h-16 rounded-lg font-mt font-bold text-4xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"} hover:-translate-y-2 cursor-pointer transition-all duration-300 flex justify-center items-center`}>
-							Back
-						</div>
-					)}
 				</div>
 				<div className="w-1/2 h-full flex items-center justify-end">
 					<div
-						onClick={() => {
-							if (canMoveFromStageOne) {
-								setStage(stage + 1);
-							}
-						}}
 						className={`w-52 h-16 rounded-lg font-mt font-bold text-4xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"} ${canMoveFromStageOne ? "hover:-translate-y-2 cursor-pointer" : "cursor-not-allowed"} transition-all duration-300 flex justify-center items-center`}>
-						Next
+						Create
 					</div>
 				</div>
 			</div>
