@@ -32,12 +32,13 @@ const Home: NextPage = () => {
 	const [authenticated, setAuthenticated] = useState(false);
 
 	const getLastTheme = () => {
-		const lsTheme = localStorage.getItem("dark");
-		if (lsTheme && lsTheme === "false") {
-			setDark(false);
-		} else {
-			setDark(true);
-		}
+		// const lsTheme = localStorage.getItem("dark");
+		// if (lsTheme && lsTheme === "false") {
+		// 	setDark(false);
+		// } else {
+		// 	setDark(true);
+		// }
+		setDark(false);
 	};
 	const toggleTheme = () => {
 		if (dark) {
