@@ -149,12 +149,12 @@ const StageOne = (props: IStageOne) => {
 
 				<div className="form flex flex-col">
 					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Asset Group Name</h1>
-					<input onInput={props.canGoOn} value={props.assetGroupName} onChange={e => props.setAssetGroupName(e.currentTarget.value)} className={`h-14 w-56 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					<input onInput={props.canGoOn} value={props.assetGroupName} onChange={e => props.setAssetGroupName(e.currentTarget.value)} className={`h-14 w-56 rounded-xl pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
 				</div>
 
 				<div className="form flex flex-col">
 					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Asset Group Description</h1>
-					<textarea onInput={props.canGoOn} value={props.assetGroupDesc} onChange={e => props.setAssetGroupDesc(e.currentTarget.value)} className={`h-14 w-80 pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></textarea>
+					<textarea onInput={props.canGoOn} value={props.assetGroupDesc} onChange={e => props.setAssetGroupDesc(e.currentTarget.value)} className={`h-14 w-80 rounded-xl pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></textarea>
 				</div>
 			</div>
 
@@ -165,8 +165,8 @@ const StageOne = (props: IStageOne) => {
 				<div className="w-full flex flex-wrap items-center">
 					{emojis.map((emoji) => (
 						<div key={emoji.id} onClick={() => props.setEmojiID(emoji.id)} className={`w-20 h-20 flex items-center hover:cursor-pointer`}>
-							{props.emojiID !== emoji.id && <div className={`w-14 h-14 flex justify-center items-center hover:-translate-y-2 transition-all duration-300 border ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn "}`}>{emoji.icon}</div>}
-							{props.emojiID === emoji.id && <div className={`w-14 h-14 flex justify-center items-center hover:-translate-y-2 transition-all duration-300 border ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn "}`}>{emoji.selectedIcon}</div>}
+							{props.emojiID !== emoji.id && <div className={`w-14 h-14 rounded-xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 border ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn "}`}>{emoji.icon}</div>}
+							{props.emojiID === emoji.id && <div className={`w-14 h-14 rounded-xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 border ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn "}`}>{emoji.selectedIcon}</div>}
 						</div>
 					))}
 				</div>

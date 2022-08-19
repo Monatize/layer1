@@ -2,18 +2,18 @@ import { AnimatePresence } from "framer-motion";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import ModalStageTracker from "./ModalStageTracker";
 import Create from "./Stages/Create";
-interface INewContractModal {
+interface INewPageModal {
 	dark: boolean;
 	setCC: Dispatch<SetStateAction<boolean>>;
 }
 
-const NewContractModal = (props: INewContractModal) => {
+const NewPageModal = (props: INewPageModal) => {
 	const [stage, setStage] = useState(1);
 	const [emojiID, setEmojiID] = useState(0);
 
-	const [contractName, setContractName] = useState("");
-	const [contractDescription, setContractDescription] = useState("");
-	const [contractType, setContractType] = useState("Auction");
+	const [pageName, setpageName] = useState("");
+	const [pageDescription, setpageDescription] = useState("");
+	const [pageType, setpageType] = useState("Auction");
 
 	const [canMoveFromStageOne, setCanMoveOn] = useState(false);
 	useEffect(() => {
@@ -29,7 +29,7 @@ const NewContractModal = (props: INewContractModal) => {
 	}, []);
 
 	const canGoOn = () => {
-		if(contractName !== "" && contractDescription !== "") {
+		if(pageName !== "" && pageDescription !== "") {
 			setCanMoveOn(true);
 		}
 		else {
@@ -48,7 +48,7 @@ const NewContractModal = (props: INewContractModal) => {
 			</div>
 			<div onClick={(e) => e.stopPropagation()} className={`w-3/4 rounded-lg min-w-[35rem] h-[700px] p-4 flex flex-col space-y-4 items-center border ${props.dark ? "bg-brand-black border-brand-font shadow-light-btn" : "bg-brand-font border-brand-black shadow-btn"} overflow-y-scroll`}>
 				<ModalStageTracker stage={stage} setStage={setStage} dark={props.dark} />
-				<AnimatePresence>{stage === 1 && <Create dark={props.dark} emojiID={emojiID} setEmojiID={setEmojiID} setContractName={setContractName} setContractDescription={setContractDescription} setContractType={setContractType} contractName={contractName} contractDescription={contractDescription} contractType={contractType} canGoOn={canGoOn} />}</AnimatePresence>
+				<AnimatePresence>{stage === 1 && <Create dark={props.dark} emojiID={emojiID} setEmojiID={setEmojiID} setPageName={setpageName} setPageDesciption={setpageDescription} setPageType={setpageType} pageName={pageName} pageDescription={pageDescription} pageType={pageType} canGoOn={canGoOn} />}</AnimatePresence>
 			</div>
 			<div onClick={(e) => e.stopPropagation()} className="w-3/4 min-w-[35rem] h-20 flex">
 				<div className="w-1/2 h-full flex items-center">
@@ -64,4 +64,4 @@ const NewContractModal = (props: INewContractModal) => {
 	);
 };
 
-export default NewContractModal;
+export default NewPageModal;

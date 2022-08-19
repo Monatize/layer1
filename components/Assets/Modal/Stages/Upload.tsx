@@ -105,7 +105,7 @@ const StageTwo = (props: IStageTwo) => {
 	return (
 		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }} className="w-full h-[calc(100%-6rem)] flex flex-col shrink-0 p-8">
 			<h1 className={`font-mt font-semibold text-lg ${props.dark ? 'text-brand-font' : 'text-brand-black'}`}>You'll be able to edit <span className="text-pink-500">metadata, odds, and more</span> after the group is created.</h1>
-			<div onClick={browseFiles} ref={dragAndDrop} className={`w-full h-full relative border flex flex-col ${assets.length > 0 ? "justify-start" : "justify-center"} items-center hover:cursor-pointer ${props.dark ? "border-brand-font shadow-light-btn" : "border-brand-black shadow-btn"}`}>
+			<div onClick={browseFiles} ref={dragAndDrop} className={`w-full h-full rounded-2xl relative border flex flex-col ${assets.length > 0 ? "justify-start" : "justify-center"} items-center hover:cursor-pointer ${props.dark ? "border-brand-font shadow-light-btn" : "border-brand-black shadow-btn"}`}>
 				<input type="file" accept="image/png, image/jpeg, image/jpg, .mp4, .mov, .mp3" ref={inputFiles} id="file" className="w-full h-full hidden" onChange={doTheThing} multiple />
 				{hovering && <div ref={dragOverlay} className="absolute w-full h-full bg-green-500/50"></div>}
 				{assets.length > 0 && (

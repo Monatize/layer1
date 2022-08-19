@@ -6,13 +6,13 @@ import { motion } from 'framer-motion';
 
 interface ICreate {
     setEmojiID: Dispatch<SetStateAction<number>>;
-    setContractName: Dispatch<SetStateAction<string>>;
-    setContractDescription: Dispatch<SetStateAction<string>>;
-    setContractType: Dispatch<SetStateAction<string>>;
+    setPageName: Dispatch<SetStateAction<string>>;
+    setPageDesciption: Dispatch<SetStateAction<string>>;
+    setPageType: Dispatch<SetStateAction<string>>;
 	canGoOn: () => void;
-    contractName: string;
-    contractDescription: string;
-    contractType: string;
+    pageName: string;
+    pageDescription: string;
+    pageType: string;
     emojiID: number;
 	dark: boolean;
 }
@@ -151,21 +151,21 @@ const Create = (props: ICreate) => {
 				<h1 className={`font-mt text-xl ${props.dark ? "text-brand-font" : "text-brand-black"}`}>This won&apos;t take very long</h1>
 
 				<div className="form flex flex-col">
-					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Contract Name</h1>
-					<input onInput={props.canGoOn} value={props.contractName} onChange={e => props.setContractName(e.currentTarget.value)} className={`h-14 w-56 rounded-xl pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Page Name</h1>
+					<input onInput={props.canGoOn} value={props.pageName} onChange={e => props.setPageName(e.currentTarget.value)} className={`h-14 w-56 rounded-xl pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
 				</div>
 
 				<div className="form flex flex-col">
-					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Contract Description</h1>
-					<textarea onInput={props.canGoOn} value={props.contractDescription} onChange={e => props.setContractDescription(e.currentTarget.value)} className={`h-14 w-80 rounded-xl pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></textarea>
+					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Page Description</h1>
+					<textarea onInput={props.canGoOn} value={props.pageDescription} onChange={e => props.setPageDesciption(e.currentTarget.value)} className={`h-14 w-80 rounded-xl pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></textarea>
 				</div>
 
 				<div className="form flex flex-col">
-					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Contract Type</h1>
-					<select value={props.contractType} onChange={e => props.setContractType(e.currentTarget.value)} className={`h-14 w-80 rounded-xl pl-2 pr-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}>
-						<option value="auction">Auction</option>
-						<option value="dutch-auction">Dutch Auction</option>
-						<option value="standard-mint">Standard Mint</option>
+					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Page Type</h1>
+					<select value={props.pageType} onChange={e => props.setPageType(e.currentTarget.value)} className={`h-14 w-80 rounded-xl pl-2 pr-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}>
+						<option value="auction">Landing Page</option>
+						<option value="dutch-auction">Mint Page</option>
+						<option value="standard-mint">About Page</option>
 					</select>
 				</div>
 			</div>
