@@ -5,7 +5,8 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { motion } from 'framer-motion';
 
 interface ICreate {
-    setEmojiID: Dispatch<SetStateAction<number>>;
+	setEmojiID: Dispatch<SetStateAction<number>>;
+	setEmoji: Dispatch<SetStateAction<JSX.Element>>;
     setPageName: Dispatch<SetStateAction<string>>;
     setPageDesciption: Dispatch<SetStateAction<string>>;
     setPageType: Dispatch<SetStateAction<string>>;
@@ -176,7 +177,10 @@ const Create = (props: ICreate) => {
 
 				<div className="w-full flex flex-wrap items-center">
 					{emojis.map((emoji) => (
-						<div key={emoji.id} onClick={() => props.setEmojiID(emoji.id)} className={`w-20 h-20 flex items-center hover:cursor-pointer`}>
+						<div key={emoji.id} onClick={() => {
+							props.setEmoji(emoji.icon);
+							props.setEmojiID(emoji.id);
+						}} className={`w-20 h-20 flex items-center hover:cursor-pointer`}>
 							{props.emojiID !== emoji.id && <div className={`w-14 h-14 rounded-xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 border ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn "}`}>{emoji.icon}</div>}
 							{props.emojiID === emoji.id && <div className={`w-14 h-14 rounded-xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 border ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn "}`}>{emoji.selectedIcon}</div>}
 						</div>
