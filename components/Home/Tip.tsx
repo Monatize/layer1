@@ -5,6 +5,7 @@ interface ITip {
 	title: string;
 	description: string;
 	href: string;
+	setTab: (tab: string) => void;
 	children: JSX.Element;
 	dark: boolean;
 }
@@ -17,9 +18,7 @@ const Tip = (props: ITip) => {
 			</div>
 			<p className={`font-mt text-lg ${props.dark ? "text-brand-font" : "text-brand-black"} `}>{props.description}</p>
 			<div className="flex justify-end">
-				<Link href={props.href}>
-					<button className={`p-2 w-1/4 rounded-xl ${props.dark ? "border border-brand-font shadow-sm-light-btn text-brand-font" : "border border-brand-black shadow-sm-btn text-brand-black"} font-mt font-bold text-xl hover:-translate-y-2 transition-all duration-300`}>Go</button>
-				</Link>
+				<button onClick={() => props.setTab(props.href)} className={`p-2 w-1/4 rounded-xl ${props.dark ? "border border-brand-font shadow-sm-light-btn text-brand-font" : "border border-brand-black shadow-sm-btn text-brand-black"} font-mt font-bold text-xl hover:-translate-y-2 transition-all duration-300`}>Go</button>
 			</div>
 		</div>
 	);

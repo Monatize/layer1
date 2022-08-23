@@ -7,8 +7,6 @@ import { useEffect, useState } from "react";
 
 // * Utils
 import { attemptAuthentication } from "../../utils/attemptAuthentication";
-// import { toggleTheme } from "../../utils/toggleTheme";
-// import { setNewTab } from "../../utils/setNewTab";
 // * Utils
 
 // * Navigation
@@ -37,13 +35,13 @@ const Home: NextPage = () => {
 	return (
 		<>
 			{!authenticated && (
-				<div className="w-screen h-screen bg-brand-black">
+				<div className="w-screen h-screen bg-brand-soft-white">
 					<Head>
 						<title>Authentication - Monatize</title>
 					</Head>
 					<div className="w-full h-full flex flex-col space-y-4 justify-center items-center">
-						<h1 className="text-brand-soft-white font-mt font-bold text-4xl">Please authenticate in order to access the admin panel.</h1>
-						<button onClick={() => attemptAuthentication({setAuthenticatedState: setAuthenticated})} className="p-4 border border-white shadow-light-btn text-brand-soft-white bg-brand-black text-xl font-mt font-medium hover:-translate-y-4 transition-all duration-300">Log in with Web3</button>
+						<h1 className="text-brand-black font-mt font-bold text-4xl">Please authenticate in order to access the admin panel.</h1>
+						<button onClick={() => attemptAuthentication({setAuthenticatedState: setAuthenticated})} className="p-4 border rounded-xl border-brand-black shadow-sm-btn text-brand-black bg-brand-soft-white text-xl font-mt font-medium hover:-translate-y-2 transition-all duration-300">Log in with Web3</button>
 					</div>
 				</div>
 			)}

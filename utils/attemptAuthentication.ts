@@ -35,7 +35,6 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
     // - Get token and check if it was there
     const authToken = localStorage.getItem("token");
     if (authToken) {
-        console.log("Auth token found - authenticating");
         // - Implies there was a token - now we query the authentication microservice using axios
         const authQuery = await axios.post("http://50.18.41.29:3001/authentication", {
             token: authToken,
@@ -45,7 +44,6 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
         if(authQuery.status === 200) {
             const storeQuery = await axios.get(`http://50.18.41.29:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`);
             if(storeQuery.data.creator === address) {
-                console.log("Address matched address for store");
                 props.setAuthenticatedState(true);
             }
             else {
@@ -64,7 +62,6 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
             if(entryQuery.status === 200) {
                 const storeQuery = await axios.get(`http://50.18.41.29:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`);
                 if(storeQuery.data.creator === address) {
-                    console.log("Address matched address for store");
                     localStorage.setItem("token", entryQuery.data.identifier);
                     props.setAuthenticatedState(true);
                 }
@@ -83,6 +80,7 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
     } else {
         const message = getMessage(address);
         const signature = await signer.signMessage(message.message);
+
         const entryQuery = await axios.post("http://50.18.41.29:3001/entry", {
             address,
             signature,
@@ -92,7 +90,6 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
         if(entryQuery.status === 200) {
             const storeQuery = await axios.get(`http://50.18.41.29:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`);
             if(storeQuery.data.creator === address) {
-                console.log("Address matched address for store");
                 localStorage.setItem("token", entryQuery.data.identifier);
                 props.setAuthenticatedState(true);
             }

@@ -13,7 +13,7 @@ const HomePanel = (props: IHomePanel) => {
 			<h1 className={`font-mt text-5xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Welcome, Landon</h1>
 			<h1 className={`font-mt text-4xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Tips to get started</h1>
 
-			<TipWrapper dark={props.dark} />
+			<TipWrapper dark={props.dark} setTab={props.setTab} />
 
 			<div className="w-full flex">
 				<NewsWrapper dark={props.dark} />
