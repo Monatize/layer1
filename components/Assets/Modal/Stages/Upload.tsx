@@ -104,8 +104,8 @@ const StageTwo = (props: IStageTwo) => {
 
 	return (
 		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }} className="w-full h-[calc(100%-6rem)] flex flex-col shrink-0 p-8">
-			<h1 className={`font-mt font-semibold text-lg ${props.dark ? 'text-brand-font' : 'text-brand-black'}`}>You'll be able to edit <span className="text-pink-500">metadata, odds, and more</span> after the group is created.</h1>
-			<div onClick={browseFiles} ref={dragAndDrop} className={`w-full h-full rounded-2xl relative border flex flex-col ${assets.length > 0 ? "justify-start" : "justify-center"} items-center hover:cursor-pointer ${props.dark ? "border-brand-font shadow-light-btn" : "border-brand-black shadow-btn"}`}>
+			<h1 className={`font-mt font-semibold text-lg text-brand-black`}>You'll be able to edit <span className="text-pink-500">metadata, odds, and more</span> after the group is created.</h1>
+			<div onClick={browseFiles} ref={dragAndDrop} className={`w-full h-full rounded-2xl relative border flex flex-col ${assets.length > 0 ? "justify-start" : "justify-center"} items-center hover:cursor-pointer border-brand-black shadow-btn`}>
 				<input type="file" accept="image/png, image/jpeg, image/jpg, .mp4, .mov, .mp3" ref={inputFiles} id="file" className="w-full h-full hidden" onChange={doTheThing} multiple />
 				{hovering && <div ref={dragOverlay} className="absolute w-full h-full bg-green-500/50"></div>}
 				{assets.length > 0 && (
@@ -113,22 +113,22 @@ const StageTwo = (props: IStageTwo) => {
 						{assets.map((asset) => (
 							<div key={asset.fileName} className="w-52 h-52 flex shrink-0 justify-center items-center">
 								{asset.type === "image/jpeg" && (
-									<div onClick={(e) => e.stopPropagation()} style={{ backgroundImage: `url(${asset.url})` }} className={`w-48 h-48 bg-contain border hover:cursor-default ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn"} `}>
+									<div onClick={(e) => e.stopPropagation()} style={{ backgroundImage: `url(${asset.url})` }} className={`w-48 h-48 bg-contain border hover:cursor-default border-brand-black shadow-sm-btn `}>
 										<div></div>
 									</div>
 								)}
 								{asset.type === "image/png" && (
-									<div onClick={(e) => e.stopPropagation()} style={{ backgroundImage: `url(${asset.url})` }} className={`w-48 h-48 bg-contain border hover:cursor-default ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn"} `}>
+									<div onClick={(e) => e.stopPropagation()} style={{ backgroundImage: `url(${asset.url})` }} className={`w-48 h-48 bg-contain border hover:cursor-default border-brand-black shadow-sm-btn `}>
 										<div></div>
 									</div>
 								)}
 								{asset.type === "video/mp4" && (
-									<div onClick={(e) => e.stopPropagation()} className={`w-48 h-48 flex flex-col justify-center items-center border hover:cursor-default ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn"} `}>
+									<div onClick={(e) => e.stopPropagation()} className={`w-48 h-48 flex flex-col justify-center items-center border hover:cursor-default border-brand-black shadow-sm-btn `}>
 										<video  src={asset.url} controls itemType="video/mp4" className="w-full h-full" />
 									</div>
 								)}
 								{asset.type === "video/quicktime" && (
-									<div onClick={(e) => e.stopPropagation()} className={`w-48 h-48 flex flex-col justify-center items-center border hover:cursor-default ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn"} `}>
+									<div onClick={(e) => e.stopPropagation()} className={`w-48 h-48 flex flex-col justify-center items-center border hover:cursor-default border-brand-black shadow-sm-btn `}>
 										<video  src={asset.url} controls itemType="video/quicktime" className="w-full h-full" />
 									</div>
 								)}
@@ -138,12 +138,12 @@ const StageTwo = (props: IStageTwo) => {
 				)}
 				{assets.length === 0 && (
 					<div>
-						<h1 className={`font-mt font-bold text-3xl ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Drag your asssets here</h1>
-						<h1 className={`font-mt font-bold text-xl ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Or click to browse files</h1>
+						<h1 className={`font-mt font-bold text-3xl text-brand-black`}>Drag your asssets here</h1>
+						<h1 className={`font-mt font-bold text-xl text-brand-black`}>Or click to browse files</h1>
 						<h1 className={`font-mt font-bold text-xl text-green-400`}>Accepted file types:</h1>
-						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-font" : "text-brand-black"}`}>PNG/JPG/JPEG</h1>
-						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-font" : "text-brand-black"}`}>MP4/MOV</h1>
-						<h1 className={`font-mt font-bold text-lg ${props.dark ? "text-brand-font" : "text-brand-black"}`}>MP3</h1>
+						<h1 className={`font-mt font-bold text-lg text-brand-black`}>PNG/JPG/JPEG</h1>
+						<h1 className={`font-mt font-bold text-lg text-brand-black`}>MP4/MOV</h1>
+						<h1 className={`font-mt font-bold text-lg text-brand-black`}>MP3</h1>
 					</div>
 				)}
 			</div>

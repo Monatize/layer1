@@ -20,7 +20,7 @@ const IconWrapper = (props: IWrapper) => {
 			}}>
 			<div className={`w-full h-full flex items-center space-x-2 ${props.disabled ? "" : "hover:-translate-y-2"} transition-all duration-300 `}>
 				{props.children}
-				<h1 className={`${props.dark ? "text-brand-soft-white" : "text-brand-black"} text-xl font-mt font-semibold`}>{props.title}</h1>
+				<h1 className={`text-brand-black text-xl font-mt font-semibold`}>{props.title}</h1>
 			</div>
 		</motion.div>
 	);

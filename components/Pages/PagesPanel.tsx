@@ -54,12 +54,12 @@ const PagesPanel = (props: IPagesPanel) => {
 			</AnimatePresence>
 
 			<div className="w-full h-full flex flex-col space-y-4">
-				<h1 className={`font-mt text-5xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Pages</h1>
+				<h1 className={`font-mt text-5xl font-bold text-brand-black`}>Pages</h1>
 				<div className="flex space-x-4">
-					<h1 className={`font-mt text-xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>0 created</h1>
+					<h1 className={`font-mt text-xl font-bold text-brand-black`}>0 created</h1>
 					<h1 className={`font-mt text-xl font-bold text-green-500`}>{liveCount} deployed</h1>
 				</div>
-				<motion.button onClick={() => setCreatingPage(true)} whileTap={{ scale: 1.1 }} className={`w-44 h-12 rounded-xl font-mt text-lg font-bold border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}>
+				<motion.button onClick={() => setCreatingPage(true)} whileTap={{ scale: 1.1 }} className={`w-44 h-12 rounded-xl font-mt text-lg font-bold border border-brand-black shadow-sm-btn text-brand-black`}>
 					New Page
 				</motion.button>
 

@@ -22,151 +22,151 @@ const StageOne = (props: IStageOne) => {
 			{
 				id: 0,
 				iconName: "EmojiHappyIcon",
-				icon: <EmojiHappyIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledEmojiHappyIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <EmojiHappyIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledEmojiHappyIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 1,
 				iconName: "BadgeCheckIcon",
-				icon: <BadgeCheckIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledBadgeCheckIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <BadgeCheckIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledBadgeCheckIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 2,
 				iconName: "BanIcon",
-				icon: <BanIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledBanIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <BanIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledBanIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 3,
 				iconName: "BeakerIcon",
-				icon: <BeakerIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledBeakerIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <BeakerIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledBeakerIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 4,
 				iconName: "BookOpenIcon",
-				icon: <BookOpenIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledBookOpenIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <BookOpenIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledBookOpenIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 5,
 				iconName: "BookmarkIcon",
-				icon: <BookmarkIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledBookmarkIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <BookmarkIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledBookmarkIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 6,
 				iconName: "CakeIcon",
-				icon: <CakeIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledCakeIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <CakeIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledCakeIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 7,
 				iconName: "CalculatorIcon",
-				icon: <CalculatorIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledCalculatorIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <CalculatorIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledCalculatorIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 8,
 				iconName: "CashIcon",
-				icon: <CashIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledCashIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <CashIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledCashIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 9,
 				iconName: "CalendarIcon",
-				icon: <CalendarIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledCalendarIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <CalendarIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledCalendarIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 10,
 				iconName: "CloudUploadIcon",
-				icon: <CloudUploadIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledCloudUploadIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <CloudUploadIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledCloudUploadIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 11,
 				iconName: "CodeIcon",
-				icon: <CodeIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledCodeIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <CodeIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledCodeIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 12,
 				iconName: "ColorSwatchIcon",
-				icon: <ColorSwatchIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledColorSwatchIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <ColorSwatchIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledColorSwatchIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 13,
 				iconName: "CubeTransparentIcon",
-				icon: <CubeTransparentIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledCubeTransparentIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <CubeTransparentIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledCubeTransparentIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 14,
 				iconName: "DatabaseIcon",
-				icon: <DatabaseIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledDatabaseIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <DatabaseIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledDatabaseIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 15,
 				iconName: "DocumentTextIcon",
-				icon: <DocumentTextIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledDocumentTextIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <DocumentTextIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledDocumentTextIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 16,
 				iconName: "EyeIcon",
-				icon: <EyeIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledEyeIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <EyeIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledEyeIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 17,
 				iconName: "GiftIcon",
-				icon: <GiftIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledGiftIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <GiftIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledGiftIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 18,
 				iconName: "LightningBoltIcon",
-				icon: <LightningBoltIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledLightningBoltIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <LightningBoltIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledLightningBoltIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 			{
 				id: 19,
 				iconName: "KeyIcon",
-				icon: <KeyIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
-				selectedIcon: <FilledKeyIcon className={`w-10 h-10 ${props.dark ? "text-brand-font" : "text-brand-black"}`} />,
+				icon: <KeyIcon className={`w-10 h-10 text-brand-black`} />,
+				selectedIcon: <FilledKeyIcon className={`w-10 h-10 text-brand-black`} />,
 			},
 		]);
 	}, []);
 	return (
 		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }} className="w-full h-[calc(100%-6rem)] flex flex-col space-y-4 xl:flex-row xl:space-y-0 shrink-0 p-8">
 			<div className="w-full xl:w-1/2 h-full flex flex-col space-y-4">
-				<h1 className={`font-mt text-4xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Let&apos;s get started.</h1>
-				<h1 className={`font-mt text-xl ${props.dark ? "text-brand-font" : "text-brand-black"}`}>You&apos;re close to uploading some creations!</h1>
+				<h1 className={`font-mt text-4xl font-bold text-brand-black`}>Let&apos;s get started.</h1>
+				<h1 className={`font-mt text-xl text-brand-black`}>You&apos;re close to uploading some creations!</h1>
 
 				<div className="form flex flex-col">
-					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Asset Group Name</h1>
-					<input onInput={props.canGoOn} value={props.assetGroupName} onChange={e => props.setAssetGroupName(e.currentTarget.value)} className={`h-14 w-56 rounded-xl pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></input>
+					<h1 className={`font-mt text-lg text-brand-black`}>Asset Group Name</h1>
+					<input onInput={props.canGoOn} value={props.assetGroupName} onChange={e => props.setAssetGroupName(e.currentTarget.value)} className={`h-14 w-56 rounded-xl pl-2 font-mt bg-transparent font-semibold text-xl border border-brand-black shadow-sm-btn text-brand-black`}></input>
 				</div>
 
 				<div className="form flex flex-col">
-					<h1 className={`font-mt text-lg ${props.dark ? "text-brand-soft-white" : "text-brand-soft-black"}`}>Asset Group Description</h1>
-					<textarea onInput={props.canGoOn} value={props.assetGroupDesc} onChange={e => props.setAssetGroupDesc(e.currentTarget.value)} className={`h-14 w-80 rounded-xl pl-2 font-mt bg-transparent font-semibold text-xl border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}></textarea>
+					<h1 className={`font-mt text-lg text-brand-black`}>Asset Group Description</h1>
+					<textarea onInput={props.canGoOn} value={props.assetGroupDesc} onChange={e => props.setAssetGroupDesc(e.currentTarget.value)} className={`h-14 w-80 rounded-xl pl-2 font-mt bg-transparent font-semibold text-xl border border-brand-black shadow-sm-btn text-brand-black`}></textarea>
 				</div>
 			</div>
 
 			<div className="w-full xl:w-1/2 flex flex-col space-y-4">
-				<h1 className={`font-mt text-4xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Let&apos;s add some style</h1>
-				<h1 className={`font-mt text-xl ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Choose an icon to represent this asset group</h1>
+				<h1 className={`font-mt text-4xl font-bold text-brand-black`}>Let&apos;s add some style</h1>
+				<h1 className={`font-mt text-xl text-brand-black`}>Choose an icon to represent this asset group</h1>
 
 				<div className="w-full flex flex-wrap items-center">
 					{emojis.map((emoji) => (
 						<div key={emoji.id} onClick={() => props.setEmojiID(emoji.id)} className={`w-20 h-20 flex items-center hover:cursor-pointer`}>
-							{props.emojiID !== emoji.id && <div className={`w-14 h-14 rounded-xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 border ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn "}`}>{emoji.icon}</div>}
-							{props.emojiID === emoji.id && <div className={`w-14 h-14 rounded-xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 border ${props.dark ? "border-brand-font shadow-sm-light-btn" : "border-brand-black shadow-sm-btn "}`}>{emoji.selectedIcon}</div>}
+							{props.emojiID !== emoji.id && <div className={`w-14 h-14 rounded-xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 border border-brand-black shadow-sm-btn`}>{emoji.icon}</div>}
+							{props.emojiID === emoji.id && <div className={`w-14 h-14 rounded-xl flex justify-center items-center hover:-translate-y-2 transition-all duration-300 border border-brand-black shadow-sm-btn`}>{emoji.selectedIcon}</div>}
 						</div>
 					))}
 				</div>

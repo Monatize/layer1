@@ -23,12 +23,12 @@ const AssetsPanel = (props: IAssetsPanel) => {
 			</AnimatePresence>
 
 			<div className="w-full h-full flex flex-col space-y-4">
-				<h1 className={`font-mt text-5xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Assets</h1>
+				<h1 className={`font-mt text-5xl font-bold text-brand-black`}>Assets</h1>
 				<div className="flex space-x-4">
-					<h1 className={`font-mt text-xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>0 groups</h1>
+					<h1 className={`font-mt text-xl font-bold text-brand-black`}>0 groups</h1>
 					<h1 className={`font-mt text-xl font-bold text-pink-500`}>0 live on <span className="text-pink-500">Pinata.Cloud</span></h1>
 				</div>
-				<motion.button onClick={() => setCreatingAG(true)} whileTap={{ scale: 1.1 }} className={`w-44 h-12 rounded-xl font-mt text-lg font-bold border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}>
+				<motion.button onClick={() => setCreatingAG(true)} whileTap={{ scale: 1.1 }} className={`w-44 h-12 rounded-xl font-mt text-lg font-bold border border-brand-black shadow-sm-btn text-brand-black`}>
 					New Group
 				</motion.button>
 			</div>

@@ -23,12 +23,12 @@ const ContractsPanel = (props: IContractsPanel) => {
 			</AnimatePresence>
 
 			<div className="w-full h-full flex flex-col space-y-4">
-				<h1 className={`font-mt text-5xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>Contracts</h1>
+				<h1 className={`font-mt text-5xl font-bold text-brand-black`}>Contracts</h1>
 				<div className="flex space-x-4">
-					<h1 className={`font-mt text-xl font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>0 created</h1>
+					<h1 className={`font-mt text-xl font-bold text-brand-black`}>0 created</h1>
 					<h1 className={`font-mt text-xl font-bold text-green-500`}>0 deployed</h1>
 				</div>
-				<motion.button onClick={() => setCreatingContract(true)} whileTap={{ scale: 1.1 }} className={`w-44 h-12 rounded-xl font-mt text-lg font-bold border ${props.dark ? "border-brand-font shadow-sm-light-btn text-brand-font" : "border-brand-black shadow-sm-btn text-brand-black"}`}>
+				<motion.button onClick={() => setCreatingContract(true)} whileTap={{ scale: 1.1 }} className={`w-44 h-12 rounded-xl font-mt text-lg font-bold border border-brand-black shadow-sm-btn text-brand-black`}>
 					New Contract
 				</motion.button>
 			</div>

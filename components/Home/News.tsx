@@ -50,11 +50,11 @@ const News = (props: INews) => {
 		<div className="w-full h-full flex flex-col space-y-4">
 			{news.map((newsPost) => (
 				<a key={newsPost.id} href={newsPost.source}>
-					<div key={newsPost.id} className={`w-4/5 p-8 flex rounded-lg space-x-4 max-h-[20rem] relative ${props.dark ? "border border-brand-font shadow-light-btn" : "border border-brand-black shadow-btn"} hover:cursor-pointer hover:-translate-y-2 transition-all duration-300`}>
+					<div key={newsPost.id} className={`w-4/5 p-8 flex rounded-lg space-x-4 max-h-[20rem] relative border border-brand-black shadow-btn hover:cursor-pointer hover:-translate-y-2 transition-all duration-300`}>
 						<div className="flex flex-col space-y-2 overflow-scroll">
 							<img src={newsPost.img} className={`w-48 rounded-xl`} />
-							<h1 className={`text-xl font-mt font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>{newsPost.title}</h1>
-							<h1 className={`text-lg font-mt font-bold ${props.dark ? "text-brand-font" : "text-brand-black"}`}>{newsPost.description}</h1>
+							<h1 className={`text-xl font-mt font-bold text-brand-black`}>{newsPost.title}</h1>
+							<h1 className={`text-lg font-mt font-bold text-brand-black`}>{newsPost.description}</h1>
 						</div>
 					</div>
 				</a>
