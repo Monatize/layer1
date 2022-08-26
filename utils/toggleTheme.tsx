@@ -1,17 +1,17 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from 'react'
 
 interface IToggleTheme {
-    dark: boolean;
-    setDark: Dispatch<SetStateAction<boolean>>;
+    dark: boolean
+    setDark: Dispatch<SetStateAction<boolean>>
 }
 
 const toggleTheme = (props: IToggleTheme) => {
     if (props.dark) {
-        localStorage.setItem("dark", "false");
+        localStorage.setItem('dark', 'false')
     } else {
-        localStorage.setItem("dark", "true");
+        localStorage.setItem('dark', 'true')
     }
-    props.setDark(!props.dark);
-};
+    props.setDark(!props.dark)
+}
 
-export { toggleTheme };
+export { toggleTheme }

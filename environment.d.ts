@@ -1,10 +1,10 @@
 declare global {
-	interface Window {
-		ethereum: any;
-	}
+    interface Window {
+        ethereum: any
+    }
     namespace NodeJS {
         interface ProcessENV {
-            NEXT_PUBLIC_STORE_ID: string;
+            NEXT_PUBLIC_STORE_ID: string
         }
     }
 }

@@ -1,11 +1,11 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from 'react'
 
 interface ISetNewTab {
-    tab: string;
-    setTab: Dispatch<SetStateAction<string>>;
+    tab: string
+    setTab: Dispatch<SetStateAction<string>>
 }
 const setNewTab = (props: ISetNewTab) => {
-    props.setTab(props.tab);
-};
+    props.setTab(props.tab)
+}
 
-export { setNewTab };
+export { setNewTab }

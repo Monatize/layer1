@@ -6,15 +6,15 @@
 
 Layer1 includes:
 
-- A full creator dashboard
-  - Create and customize sites
-  - Deploy and view smart contracts
-  - Randomize assets
-  - View analytics
-  - Market yourself
-  - & More
-- The actual viewer page
-  - Allows visitors to come see the site and mint
+-   A full creator dashboard
+    -   Create and customize sites
+    -   Deploy and view smart contracts
+    -   Randomize assets
+    -   View analytics
+    -   Market yourself
+    -   & More
+-   The actual viewer page
+    -   Allows visitors to come see the site and mint
 
 ## How to develop?
 

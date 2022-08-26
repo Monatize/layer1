@@ -1,38 +1,39 @@
 // * React/Next/Libs
-import { NextPage } from "next";
+import { NextPage } from 'next'
 
-import Head from "next/head";
-import { useEffect, useState } from "react";
+import Head from 'next/head'
+import { useEffect, useState } from 'react'
 // * React/Next/Libs
 
 // * Utils
-import { attemptAuthentication } from "../../utils/attemptAuthentication";
+import { attemptAuthentication } from '../../utils/attemptAuthentication'
 // * Utils
 
 // * Navigation
-import Sidebar from "../../components/Navigation/Sidebar";
+import Sidebar from '../../components/Navigation/Sidebar'
 // * Navigation
 
 // * Panels
-import HomePanel from "../../components/Home/HomePanel";
-import StatsPanel from "../../components/Stats/StatsPanel";
-import PagesPanel from "../../components/Pages/PagesPanel";
-import ContractsPanel from "../../components/Contracts/ContractsPanel";
-import AssetsPanel from "../../components/Assets/AssetsPanel";
-import SettingsPanel from "../../components/Settings/SettingsPanel";
+import HomePanel from '../../components/Home/HomePanel'
+import StatsPanel from '../../components/Stats/StatsPanel'
+import PagesPanel from '../../components/Pages/PagesPanel'
+import ContractsPanel from '../../components/Contracts/ContractsPanel'
+import AssetsPanel from '../../components/Assets/AssetsPanel'
+import SettingsPanel from '../../components/Settings/SettingsPanel'
 // * Panels
 
 const Home: NextPage = () => {
-	const [dark, setDark] = useState(false);
-	const [tab, setTab] = useState("home");
-	const [authenticated, setAuthenticated] = useState(false);
+    const [dark, setDark] = useState(false)
+    const [tab, setTab] = useState('home')
+    const [authenticated, setAuthenticated] = useState(false)
 
+    useEffect(() => {
+        attemptAuthentication({
+            setAuthenticatedState: setAuthenticated,
+        }).catch((e) => console.log(e))
+    }, [])
 
-	useEffect(() => {
-		attemptAuthentication({setAuthenticatedState: setAuthenticated}).catch(e => console.log(e))
-	}, []);
-
-	return (
+    return (
         <>
             {!authenticated && (
                 <div className="w-screen h-screen bg-brand-soft-white">
@@ -90,5 +91,5 @@ const Home: NextPage = () => {
             )}
         </>
     )
-};
-export default Home;
+}
+export default Home
