@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import NewPageModal from './NewPageModal'
-import { BadgeCheckIcon, EmojiHappyIcon } from '@heroicons/react/outline'
-import { ChevronRightIcon } from '@heroicons/react/solid'
+import { CheckBadgeIcon, FaceSmileIcon } from '@heroicons/react/24/outline'
+import { ChevronRightIcon } from '@heroicons/react/24/solid'
 import Link from 'next/link'
 
 interface IPagesPanel {
@@ -32,7 +32,7 @@ const PagesPanel = (props: IPagesPanel) => {
                 pageType: 'Landing Page',
                 live: true,
                 icon: (
-                    <EmojiHappyIcon className={`w-10 h-10 text-brand-black`} />
+                    <FaceSmileIcon className={`w-10 h-10 text-brand-black`} />
                 ),
             },
             {
@@ -42,7 +42,7 @@ const PagesPanel = (props: IPagesPanel) => {
                 pageType: 'Mint Page',
                 live: false,
                 icon: (
-                    <BadgeCheckIcon className={`w-10 h-10 text-brand-black`} />
+                    <CheckBadgeIcon className={`w-10 h-10 text-brand-black`} />
                 ),
             },
         ])

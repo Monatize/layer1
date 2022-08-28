@@ -5,21 +5,19 @@
 import {
     HomeIcon,
     ChartBarIcon,
-    CollectionIcon,
-    TerminalIcon,
-    PhotographIcon,
-    CashIcon,
-    AdjustmentsIcon,
-} from '@heroicons/react/solid'
+    GlobeAltIcon,
+    CommandLineIcon,
+    PhotoIcon,
+    AdjustmentsVerticalIcon,
+} from '@heroicons/react/24/solid'
 import {
     HomeIcon as OutlineHomeIcon,
     ChartBarIcon as OutlineChartBarIcon,
-    CollectionIcon as OutlineCollectionIcon,
-    TerminalIcon as OutlineTerminalIcon,
-    PhotographIcon as OutlinePhotographIcon,
-    CashIcon as OutlineCashIcon,
-    AdjustmentsIcon as OutlineAdjustmentsIcons,
-} from '@heroicons/react/outline'
+    GlobeAltIcon as OutlineGlobeAltIcon,
+    CommandLineIcon as OutlineCommandLineIcon,
+    PhotoIcon as OutlinePhotoIcon,
+    AdjustmentsVerticalIcon as OutlineAdjustmentsVerticalIcon,
+} from '@heroicons/react/24/outline'
 
 import IconWrapper from './IconWrapper'
 import { useEffect, useState } from 'react'
@@ -55,29 +53,29 @@ const Sidebar = (props: ISidebar) => {
             {
                 title: "Assets",
                 href: "assets",
-                activeIcon: <PhotographIcon className={iconClass} />,
-                inactiveIcon: <OutlinePhotographIcon className={iconClass} />,
+                activeIcon: <PhotoIcon className={iconClass} />,
+                inactiveIcon: <OutlinePhotoIcon className={iconClass} />,
                 disabled: false,
             },
             {
                 title: "Pages",
                 href: "pages",
-                activeIcon: <CollectionIcon className={iconClass} />,
-                inactiveIcon: <OutlineCollectionIcon className={iconClass} />,
+                activeIcon: <GlobeAltIcon className={iconClass} />,
+                inactiveIcon: <OutlineGlobeAltIcon className={iconClass} />,
                 disabled: false,
             },
             {
                 title: "Contracts",
                 href: "contracts",
-                activeIcon: <TerminalIcon className={iconClass} />,
-                inactiveIcon: <OutlineTerminalIcon className={iconClass} />,
+                activeIcon: <CommandLineIcon className={iconClass} />,
+                inactiveIcon: <OutlineCommandLineIcon className={iconClass} />,
                 disabled: false,
             },
             {
                 title: "Settings",
                 href: "settings",
-                activeIcon: <AdjustmentsIcon className={iconClass} />,
-                inactiveIcon: <OutlineAdjustmentsIcons className={iconClass} />,
+                activeIcon: <AdjustmentsVerticalIcon className={iconClass} />,
+                inactiveIcon: <OutlineAdjustmentsVerticalIcon className={iconClass} />,
                 disabled: false,
             }
         ])

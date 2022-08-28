@@ -1,11 +1,11 @@
 import {
     ChartBarIcon,
-    CollectionIcon,
-    TerminalIcon,
-    PhotographIcon,
-    CashIcon,
-    AdjustmentsIcon,
-} from '@heroicons/react/solid'
+    GlobeAltIcon,
+    CommandLineIcon,
+    PhotoIcon,
+    BanknotesIcon,
+    AdjustmentsVerticalIcon,
+} from '@heroicons/react/24/solid'
 
 interface IQuickActionsWrapper {
     dark: boolean
@@ -34,7 +34,7 @@ const QuickActionsWrapper = (props: IQuickActionsWrapper) => {
                     onClick={() => props.setTab('pages')}
                     className={`p-4 h-32 w-1/2 rounded-lg flex flex-row justify-center items-center space-x-2 hover:-translate-y-4 hover:cursor-pointer transition-all duration-300 border border-brand-black shadow-sm-btn`}
                 >
-                    <CollectionIcon className={`w-14 h-14 text-brand-black`} />
+                    <GlobeAltIcon className={`w-14 h-14 text-brand-black`} />
                     <h1
                         className={`font-mt font-bold text-3xl text-brand-black`}
                     >
@@ -47,7 +47,7 @@ const QuickActionsWrapper = (props: IQuickActionsWrapper) => {
                     onClick={() => props.setTab('contracts')}
                     className={`p-4 h-32 w-1/2 rounded-lg flex flex-row justify-center items-center space-x-2 hover:-translate-y-4 hover:cursor-pointer transition-all duration-300 border border-brand-black shadow-sm-btn`}
                 >
-                    <TerminalIcon className={`w-14 h-14 text-brand-black`} />
+                    <CommandLineIcon className={`w-14 h-14 text-brand-black`} />
                     <h1
                         className={`font-mt font-bold text-3xl text-brand-black`}
                     >
@@ -58,7 +58,7 @@ const QuickActionsWrapper = (props: IQuickActionsWrapper) => {
                     onClick={() => props.setTab('assets')}
                     className={`p-4 h-32 w-1/2 rounded-lg flex flex-row justify-center items-center space-x-2 hover:-translate-y-4 hover:cursor-pointer transition-all duration-300 border border-brand-black shadow-sm-btn`}
                 >
-                    <PhotographIcon className={`w-14 h-14 text-brand-black`} />
+                    <PhotoIcon className={`w-14 h-14 text-brand-black`} />
                     <h1
                         className={`font-mt font-bold text-3xl text-brand-black`}
                     >
@@ -71,7 +71,7 @@ const QuickActionsWrapper = (props: IQuickActionsWrapper) => {
                     onClick={() => props.setTab('cash')}
                     className={`p-4 h-32 w-1/2 rounded-lg flex flex-row justify-center items-center space-x-2 hover:-translate-y-4 hover:cursor-pointer transition-all duration-300 border border-brand-black shadow-sm-btn`}
                 >
-                    <CashIcon className={`w-14 h-14 text-brand-black`} />
+                    <BanknotesIcon className={`w-14 h-14 text-brand-black`} />
                     <h1
                         className={`font-mt font-bold text-3xl text-brand-black`}
                     >
@@ -82,7 +82,7 @@ const QuickActionsWrapper = (props: IQuickActionsWrapper) => {
                     onClick={() => props.setTab('settings')}
                     className={`p-4 h-32 w-1/2 rounded-lg flex flex-row justify-center items-center space-x-2 hover:-translate-y-4 hover:cursor-pointer transition-all duration-300 border border-brand-black shadow-sm-btn`}
                 >
-                    <AdjustmentsIcon className={`w-14 h-14 text-brand-black`} />
+                    <AdjustmentsVerticalIcon className={`w-14 h-14 text-brand-black`} />
                     <h1
                         className={`font-mt font-bold text-3xl text-brand-black`}
                     >

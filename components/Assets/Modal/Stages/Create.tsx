@@ -1,47 +1,47 @@
 import {
-    EmojiHappyIcon,
-    BadgeCheckIcon,
-    BanIcon,
+    FaceSmileIcon,
+    CheckBadgeIcon,
+    LifebuoyIcon,
     BeakerIcon,
     BookOpenIcon,
     BookmarkIcon,
     CakeIcon,
     CalculatorIcon,
-    CashIcon,
+    BanknotesIcon,
     CalendarIcon,
-    CloudUploadIcon,
-    CodeIcon,
-    ColorSwatchIcon,
-    CubeTransparentIcon,
-    DatabaseIcon,
+    CloudArrowUpIcon,
+    CodeBracketIcon,
+    CodeBracketIcon as FilledCodeBracketIcon,
+    SwatchIcon,
+    CubeIcon,
+    CircleStackIcon,
     DocumentTextIcon,
     EyeIcon,
     GiftIcon,
-    LightningBoltIcon,
+    BoltIcon,
     KeyIcon,
-} from '@heroicons/react/outline'
+} from '@heroicons/react/24/outline'
 import {
-    EmojiHappyIcon as FilledEmojiHappyIcon,
-    BadgeCheckIcon as FilledBadgeCheckIcon,
-    BanIcon as FilledBanIcon,
+    FaceSmileIcon as FilledFaceSmileIcon,
+    CheckBadgeIcon as FilledCheckBadgeIcon,
+    LifebuoyIcon as FilledLifebuoyIcon,
     BeakerIcon as FilledBeakerIcon,
     BookOpenIcon as FilledBookOpenIcon,
     BookmarkIcon as FilledBookmarkIcon,
     CakeIcon as FilledCakeIcon,
     CalculatorIcon as FilledCalculatorIcon,
-    CashIcon as FilledCashIcon,
+    BanknotesIcon as FilledBanknotesIcon,
     CalendarIcon as FilledCalendarIcon,
-    CloudUploadIcon as FilledCloudUploadIcon,
-    CodeIcon as FilledCodeIcon,
-    ColorSwatchIcon as FilledColorSwatchIcon,
-    CubeTransparentIcon as FilledCubeTransparentIcon,
-    DatabaseIcon as FilledDatabaseIcon,
+    CloudArrowUpIcon as FilledCloudArrowUpIcon,
+    SwatchIcon as FilledSwatchIcon,
+    CubeIcon as FilledCubeIcon,
+    CircleStackIcon as FilledCircleStackIcon,
     DocumentTextIcon as FilledDocumentTextIcon,
     EyeIcon as FilledEyeIcon,
     GiftIcon as FilledGiftIcon,
-    LightningBoltIcon as FilledLightningBoltIcon,
+    BoltIcon as FilledBoltIcon,
     KeyIcon as FilledKeyIcon,
-} from '@heroicons/react/solid'
+} from '@heroicons/react/24/solid'
 import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
@@ -70,34 +70,34 @@ const StageOne = (props: IStageOne) => {
         setEmojis([
             {
                 id: 0,
-                iconName: 'EmojiHappyIcon',
+                iconName: 'FaceSmileIcon',
                 icon: (
-                    <EmojiHappyIcon className={`w-10 h-10 text-brand-black`} />
+                    <FaceSmileIcon className={`w-10 h-10 text-brand-black`} />
                 ),
                 selectedIcon: (
-                    <FilledEmojiHappyIcon
+                    <FilledFaceSmileIcon
                         className={`w-10 h-10 text-brand-black`}
                     />
                 ),
             },
             {
                 id: 1,
-                iconName: 'BadgeCheckIcon',
+                iconName: 'CheckBadgeIcon',
                 icon: (
-                    <BadgeCheckIcon className={`w-10 h-10 text-brand-black`} />
+                    <CheckBadgeIcon className={`w-10 h-10 text-brand-black`} />
                 ),
                 selectedIcon: (
-                    <FilledBadgeCheckIcon
+                    <FilledCheckBadgeIcon
                         className={`w-10 h-10 text-brand-black`}
                     />
                 ),
             },
             {
                 id: 2,
-                iconName: 'BanIcon',
-                icon: <BanIcon className={`w-10 h-10 text-brand-black`} />,
+                iconName: 'LifebuoyIcon',
+                icon: <LifebuoyIcon className={`w-10 h-10 text-brand-black`} />,
                 selectedIcon: (
-                    <FilledBanIcon className={`w-10 h-10 text-brand-black`} />
+                    <FilledLifebuoyIcon className={`w-10 h-10 text-brand-black`} />
                 ),
             },
             {
@@ -152,10 +152,10 @@ const StageOne = (props: IStageOne) => {
             },
             {
                 id: 8,
-                iconName: 'CashIcon',
-                icon: <CashIcon className={`w-10 h-10 text-brand-black`} />,
+                iconName: 'BanknotesIcon',
+                icon: <BanknotesIcon className={`w-10 h-10 text-brand-black`} />,
                 selectedIcon: (
-                    <FilledCashIcon className={`w-10 h-10 text-brand-black`} />
+                    <FilledBanknotesIcon className={`w-10 h-10 text-brand-black`} />
                 ),
             },
             {
@@ -170,56 +170,56 @@ const StageOne = (props: IStageOne) => {
             },
             {
                 id: 10,
-                iconName: 'CloudUploadIcon',
+                iconName: 'CloudArrowUpIcon',
                 icon: (
-                    <CloudUploadIcon className={`w-10 h-10 text-brand-black`} />
+                    <CloudArrowUpIcon className={`w-10 h-10 text-brand-black`} />
                 ),
                 selectedIcon: (
-                    <FilledCloudUploadIcon
+                    <FilledCloudArrowUpIcon
                         className={`w-10 h-10 text-brand-black`}
                     />
                 ),
             },
             {
                 id: 11,
-                iconName: 'CodeIcon',
-                icon: <CodeIcon className={`w-10 h-10 text-brand-black`} />,
+                iconName: 'CodeBracketIcon',
+                icon: <CodeBracketIcon className={`w-10 h-10 text-brand-black`} />,
                 selectedIcon: (
-                    <FilledCodeIcon className={`w-10 h-10 text-brand-black`} />
+                    <FilledCodeBracketIcon className={`w-10 h-10 text-brand-black`} />
                 ),
             },
             {
                 id: 12,
-                iconName: 'ColorSwatchIcon',
+                iconName: 'SwatchIcon',
                 icon: (
-                    <ColorSwatchIcon className={`w-10 h-10 text-brand-black`} />
+                    <SwatchIcon className={`w-10 h-10 text-brand-black`} />
                 ),
                 selectedIcon: (
-                    <FilledColorSwatchIcon
+                    <FilledSwatchIcon
                         className={`w-10 h-10 text-brand-black`}
                     />
                 ),
             },
             {
                 id: 13,
-                iconName: 'CubeTransparentIcon',
+                iconName: 'CubeIcon',
                 icon: (
-                    <CubeTransparentIcon
+                    <CubeIcon
                         className={`w-10 h-10 text-brand-black`}
                     />
                 ),
                 selectedIcon: (
-                    <FilledCubeTransparentIcon
+                    <FilledCubeIcon
                         className={`w-10 h-10 text-brand-black`}
                     />
                 ),
             },
             {
                 id: 14,
-                iconName: 'DatabaseIcon',
-                icon: <DatabaseIcon className={`w-10 h-10 text-brand-black`} />,
+                iconName: 'CircleStackIcon',
+                icon: <CircleStackIcon className={`w-10 h-10 text-brand-black`} />,
                 selectedIcon: (
-                    <FilledDatabaseIcon
+                    <FilledCircleStackIcon
                         className={`w-10 h-10 text-brand-black`}
                     />
                 ),
@@ -256,14 +256,14 @@ const StageOne = (props: IStageOne) => {
             },
             {
                 id: 18,
-                iconName: 'LightningBoltIcon',
+                iconName: 'BoltIcon',
                 icon: (
-                    <LightningBoltIcon
+                    <BoltIcon
                         className={`w-10 h-10 text-brand-black`}
                     />
                 ),
                 selectedIcon: (
-                    <FilledLightningBoltIcon
+                    <FilledBoltIcon
                         className={`w-10 h-10 text-brand-black`}
                     />
                 ),

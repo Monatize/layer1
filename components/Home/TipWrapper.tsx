@@ -1,11 +1,11 @@
 import Tip from './Tip'
 
 import {
+    EyeIcon,
     GlobeAltIcon,
-    CollectionIcon,
-    TerminalIcon,
-    AdjustmentsIcon,
-} from '@heroicons/react/solid'
+    CommandLineIcon,
+    AdjustmentsVerticalIcon,
+} from '@heroicons/react/24/solid'
 
 interface ITipWrapper {
     setTab: (tab: string) => void
@@ -21,7 +21,7 @@ const TipWrapper = (props: ITipWrapper) => {
                 href="settings"
                 setTab={props.setTab}
             >
-                <GlobeAltIcon className={`w-8 h-8 text-brand-black`} />
+                <EyeIcon className={`w-8 h-8 text-brand-black`} />
             </Tip>
 
             <Tip
@@ -31,7 +31,7 @@ const TipWrapper = (props: ITipWrapper) => {
                 href="pages"
                 setTab={props.setTab}
             >
-                <CollectionIcon className={`w-8 h-8 text-brand-black`} />
+                <GlobeAltIcon className={`w-8 h-8 text-brand-black`} />
             </Tip>
 
             <Tip
@@ -41,7 +41,7 @@ const TipWrapper = (props: ITipWrapper) => {
                 href="contracts"
                 setTab={props.setTab}
             >
-                <TerminalIcon className={`w-8 h-8 text-brand-black`} />
+                <CommandLineIcon className={`w-8 h-8 text-brand-black`} />
             </Tip>
 
             <Tip
@@ -51,7 +51,7 @@ const TipWrapper = (props: ITipWrapper) => {
                 href="settings"
                 setTab={props.setTab}
             >
-                <AdjustmentsIcon className={`w-8 h-8 text-brand-black`} />
+                <AdjustmentsVerticalIcon className={`w-8 h-8 text-brand-black`} />
             </Tip>
         </div>
     )
