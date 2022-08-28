@@ -70,218 +70,218 @@ const Create = (props: ICreate) => {
         }[]
     >([])
 
-    useEffect(() => {
-        setEmojis([
-            {
-                id: 0,
-                iconName: 'EmojiHappyIcon',
-                icon: (
-                    <EmojiHappyIcon className={`w-10 h-10 text-brand-black`} />
-                ),
-                selectedIcon: (
-                    <FilledEmojiHappyIcon
-                        className={`w-10 h-10 text-brand-black`}
-                    />
-                ),
-            },
-            {
-                id: 1,
-                iconName: 'BadgeCheckIcon',
-                icon: (
-                    <BadgeCheckIcon className={`w-10 h-10 text-brand-black`} />
-                ),
-                selectedIcon: (
-                    <FilledBadgeCheckIcon
-                        className={`w-10 h-10 text-brand-black`}
-                    />
-                ),
-            },
-            {
-                id: 2,
-                iconName: 'BanIcon',
-                icon: <BanIcon className={`w-10 h-10 text-brand-black`} />,
-                selectedIcon: (
-                    <FilledBanIcon className={`w-10 h-10 text-brand-black`} />
-                ),
-            },
-            {
-                id: 3,
-                iconName: 'BeakerIcon',
-                icon: <BeakerIcon className={`w-10 h-10 text-brand-black`} />,
-                selectedIcon: (
-                    <FilledBeakerIcon
-                        className={`w-10 h-10 text-brand-black`}
-                    />
-                ),
-            },
-            {
-                id: 4,
-                iconName: 'BookOpenIcon',
-                icon: <BookOpenIcon className={`w-10 h-10 text-brand-black`} />,
-                selectedIcon: (
-                    <FilledBookOpenIcon
-                        className={`w-10 h-10 text-brand-black`}
-                    />
-                ),
-            },
-            {
-                id: 5,
-                iconName: 'BookmarkIcon',
-                icon: <BookmarkIcon className={`w-10 h-10 text-brand-black`} />,
-                selectedIcon: (
-                    <FilledBookmarkIcon
-                        className={`w-10 h-10 text-brand-black`}
-                    />
-                ),
-            },
-            {
-                id: 6,
-                iconName: 'CakeIcon',
-                icon: <CakeIcon className={`w-10 h-10 text-brand-black`} />,
-                selectedIcon: (
-                    <FilledCakeIcon className={`w-10 h-10 text-brand-black`} />
-                ),
-            },
-            {
-                id: 7,
-                iconName: 'CalculatorIcon',
-                icon: (
-                    <CalculatorIcon className={`w-10 h-10 text-brand-black`} />
-                ),
-                selectedIcon: (
-                    <FilledCalculatorIcon
-                        className={`w-10 h-10 text-brand-black`}
-                    />
-                ),
-            },
-            {
-                id: 8,
-                iconName: 'CashIcon',
-                icon: <CashIcon className={`w-10 h-10 text-brand-black`} />,
-                selectedIcon: (
-                    <FilledCashIcon className={`w-10 h-10 text-brand-black`} />
-                ),
-            },
-            {
-                id: 9,
-                iconName: 'CalendarIcon',
-                icon: <CalendarIcon className={`w-10 h-10 text-brand-black`} />,
-                selectedIcon: (
-                    <FilledCalendarIcon
-                        className={`w-10 h-10 text-brand-black`}
-                    />
-                ),
-            },
-            {
-                id: 10,
-                iconName: 'CloudUploadIcon',
-                icon: (
-                    <CloudUploadIcon className={`w-10 h-10 text-brand-black`} />
-                ),
-                selectedIcon: (
-                    <FilledCloudUploadIcon
-                        className={`w-10 h-10 text-brand-black`}
-                    />
-                ),
-            },
-            {
-                id: 11,
-                iconName: 'CodeIcon',
-                icon: <CodeIcon className={`w-10 h-10 text-brand-black`} />,
-                selectedIcon: (
-                    <FilledCodeIcon className={`w-10 h-10 text-brand-black`} />
-                ),
-            },
-            {
-                id: 12,
-                iconName: 'ColorSwatchIcon',
-                icon: (
-                    <ColorSwatchIcon className={`w-10 h-10 text-brand-black`} />
-                ),
-                selectedIcon: (
-                    <FilledColorSwatchIcon
-                        className={`w-10 h-10 text-brand-black`}
-                    />
-                ),
-            },
-            {
-                id: 13,
-                iconName: 'CubeTransparentIcon',
-                icon: (
-                    <CubeTransparentIcon
-                        className={`w-10 h-10 text-brand-black`}
-                    />
-                ),
-                selectedIcon: (
-                    <FilledCubeTransparentIcon
-                        className={`w-10 h-10 text-brand-black`}
-                    />
-                ),
-            },
-            {
-                id: 14,
-                iconName: 'DatabaseIcon',
-                icon: <DatabaseIcon className={`w-10 h-10 text-brand-black`} />,
-                selectedIcon: (
-                    <FilledDatabaseIcon
-                        className={`w-10 h-10 text-brand-black`}
-                    />
-                ),
-            },
-            {
-                id: 15,
-                iconName: 'DocumentTextIcon',
-                icon: (
-                    <DocumentTextIcon
-                        className={`w-10 h-10 text-brand-black`}
-                    />
-                ),
-                selectedIcon: (
-                    <FilledDocumentTextIcon
-                        className={`w-10 h-10 text-brand-black`}
-                    />
-                ),
-            },
-            {
-                id: 16,
-                iconName: 'EyeIcon',
-                icon: <EyeIcon className={`w-10 h-10 text-brand-black`} />,
-                selectedIcon: (
-                    <FilledEyeIcon className={`w-10 h-10 text-brand-black`} />
-                ),
-            },
-            {
-                id: 17,
-                iconName: 'GiftIcon',
-                icon: <GiftIcon className={`w-10 h-10 text-brand-black`} />,
-                selectedIcon: (
-                    <FilledGiftIcon className={`w-10 h-10 text-brand-black`} />
-                ),
-            },
-            {
-                id: 18,
-                iconName: 'LightningBoltIcon',
-                icon: (
-                    <LightningBoltIcon
-                        className={`w-10 h-10 text-brand-black`}
-                    />
-                ),
-                selectedIcon: (
-                    <FilledLightningBoltIcon
-                        className={`w-10 h-10 text-brand-black`}
-                    />
-                ),
-            },
-            {
-                id: 19,
-                iconName: 'KeyIcon',
-                icon: <KeyIcon className={`w-10 h-10 text-brand-black`} />,
-                selectedIcon: (
-                    <FilledKeyIcon className={`w-10 h-10 text-brand-black`} />
-                ),
-            },
-        ])
-    }, [])
+    // useEffect(() => {
+    //     setEmojis(
+    //         {
+    //             id: 0,
+    //             iconName: 'EmojiHappyIcon',
+    //             icon: (
+    //                 <EmojiHappyIcon className={`w-10 h-10 text-brand-black`} />
+    //             ),
+    //             selectedIcon: (
+    //                 <FilledEmojiHappyIcon
+    //                     className={`w-10 h-10 text-brand-black`}
+    //                 />
+    //             ),
+    //         },
+    //         {
+    //             id: 1,
+    //             iconName: 'BadgeCheckIcon',
+    //             icon: (
+    //                 <BadgeCheckIcon className={`w-10 h-10 text-brand-black`} />
+    //             ),
+    //             selectedIcon: (
+    //                 <FilledBadgeCheckIcon
+    //                     className={`w-10 h-10 text-brand-black`}
+    //                 />
+    //             ),
+    //         },
+    //         {
+    //             id: 2,
+    //             iconName: 'BanIcon',
+    //             icon: <BanIcon className={`w-10 h-10 text-brand-black`} />,
+    //             selectedIcon: (
+    //                 <FilledBanIcon className={`w-10 h-10 text-brand-black`} />
+    //             ),
+    //         },
+    //         {
+    //             id: 3,
+    //             iconName: 'BeakerIcon',
+    //             icon: <BeakerIcon className={`w-10 h-10 text-brand-black`} />,
+    //             selectedIcon: (
+    //                 <FilledBeakerIcon
+    //                     className={`w-10 h-10 text-brand-black`}
+    //                 />
+    //             ),
+    //         },
+    //         {
+    //             id: 4,
+    //             iconName: 'BookOpenIcon',
+    //             icon: <BookOpenIcon className={`w-10 h-10 text-brand-black`} />,
+    //             selectedIcon: (
+    //                 <FilledBookOpenIcon
+    //                     className={`w-10 h-10 text-brand-black`}
+    //                 />
+    //             ),
+    //         },
+    //         {
+    //             id: 5,
+    //             iconName: 'BookmarkIcon',
+    //             icon: <BookmarkIcon className={`w-10 h-10 text-brand-black`} />,
+    //             selectedIcon: (
+    //                 <FilledBookmarkIcon
+    //                     className={`w-10 h-10 text-brand-black`}
+    //                 />
+    //             ),
+    //         },
+    //         {
+    //             id: 6,
+    //             iconName: 'CakeIcon',
+    //             icon: <CakeIcon className={`w-10 h-10 text-brand-black`} />,
+    //             selectedIcon: (
+    //                 <FilledCakeIcon className={`w-10 h-10 text-brand-black`} />
+    //             ),
+    //         },
+    //         {
+    //             id: 7,
+    //             iconName: 'CalculatorIcon',
+    //             icon: (
+    //                 <CalculatorIcon className={`w-10 h-10 text-brand-black`} />
+    //             ),
+    //             selectedIcon: (
+    //                 <FilledCalculatorIcon
+    //                     className={`w-10 h-10 text-brand-black`}
+    //                 />
+    //             ),
+    //         },
+    //         {
+    //             id: 8,
+    //             iconName: 'CashIcon',
+    //             icon: <CashIcon className={`w-10 h-10 text-brand-black`} />,
+    //             selectedIcon: (
+    //                 <FilledCashIcon className={`w-10 h-10 text-brand-black`} />
+    //             ),
+    //         },
+    //         {
+    //             id: 9,
+    //             iconName: 'CalendarIcon',
+    //             icon: <CalendarIcon className={`w-10 h-10 text-brand-black`} />,
+    //             selectedIcon: (
+    //                 <FilledCalendarIcon
+    //                     className={`w-10 h-10 text-brand-black`}
+    //                 />
+    //             ),
+    //         },
+    //         {
+    //             id: 10,
+    //             iconName: 'CloudUploadIcon',
+    //             icon: (
+    //                 <CloudUploadIcon className={`w-10 h-10 text-brand-black`} />
+    //             ),
+    //             selectedIcon: (
+    //                 <FilledCloudUploadIcon
+    //                     className={`w-10 h-10 text-brand-black`}
+    //                 />
+    //             ),
+    //         },  
+    //         {
+    //             id: 11,
+    //             iconName: 'CodeIcon',
+    //             icon: <CodeIcon className={`w-10 h-10 text-brand-black`} />,
+    //             selectedIcon: (
+    //                 <FilledCodeIcon className={`w-10 h-10 text-brand-black`} />
+    //             ),
+    //         },
+    //         {
+    //             id: 12,
+    //             iconName: 'ColorSwatchIcon',
+    //             icon: (
+    //                 <ColorSwatchIcon className={`w-10 h-10 text-brand-black`} />
+    //             ),
+    //             selectedIcon: (
+    //                 <FilledColorSwatchIcon
+    //                     className={`w-10 h-10 text-brand-black`}
+    //                 />
+    //             ),
+    //         },
+    //         {
+    //             id: 13,
+    //             iconName: 'CubeTransparentIcon',
+    //             icon: (
+    //                 <CubeTransparentIcon
+    //                     className={`w-10 h-10 text-brand-black`}
+    //                 />
+    //             ),
+    //             selectedIcon: (
+    //                 <FilledCubeTransparentIcon
+    //                     className={`w-10 h-10 text-brand-black`}
+    //                 />
+    //             ),
+    //         },
+    //         {
+    //             id: 14,
+    //             iconName: 'DatabaseIcon',
+    //             icon: <DatabaseIcon className={`w-10 h-10 text-brand-black`} />,
+    //             selectedIcon: (
+    //                 <FilledDatabaseIcon
+    //                     className={`w-10 h-10 text-brand-black`}
+    //                 />
+    //             ),
+    //         },
+    //         {
+    //             id: 15,
+    //             iconName: 'DocumentTextIcon',
+    //             icon: (
+    //                 <DocumentTextIcon
+    //                     className={`w-10 h-10 text-brand-black`}
+    //                 />
+    //             ),
+    //             selectedIcon: (
+    //                 <FilledDocumentTextIcon
+    //                     className={`w-10 h-10 text-brand-black`}
+    //                 />
+    //             ),
+    //         },
+    //         {
+    //             id: 16,
+    //             iconName: 'EyeIcon',
+    //             icon: <EyeIcon className={`w-10 h-10 text-brand-black`} />,
+    //             selectedIcon: (
+    //                 <FilledEyeIcon className={`w-10 h-10 text-brand-black`} />
+    //             ),
+    //         },
+    //         {
+    //             id: 17,
+    //             iconName: 'GiftIcon',
+    //             icon: <GiftIcon className={`w-10 h-10 text-brand-black`} />,
+    //             selectedIcon: (
+    //                 <FilledGiftIcon className={`w-10 h-10 text-brand-black`} />
+    //             ),
+    //         },
+    //         {
+    //             id: 18,
+    //             iconName: 'LightningBoltIcon',
+    //             icon: (
+    //                 <LightningBoltIcon
+    //                     className={`w-10 h-10 text-brand-black`}
+    //                 />
+    //             ),
+    //             selectedIcon: (
+    //                 <FilledLightningBoltIcon
+    //                     className={`w-10 h-10 text-brand-black`}
+    //                 />
+    //             ),
+    //         },
+    //         {
+    //             id: 19,
+    //             iconName: 'KeyIcon',
+    //             icon: <KeyIcon className={`w-10 h-10 text-brand-black`} />,
+    //             selectedIcon: (
+    //                 <FilledKeyIcon className={`w-10 h-10 text-brand-black`} />
+    //             ),
+    //         },
+    //     ])
+    // }, [])
     return (
         <motion.div
             initial={{ opacity: 0 }}

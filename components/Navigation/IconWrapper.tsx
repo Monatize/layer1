@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion'
 
 interface IWrapper {
-    dark: boolean
     title: string
     tab: string
     setTab: (tab: string) => void
-    children: (false | JSX.Element)[]
+    children: (false | JSX.Element)
     disabled: boolean
 }
 const IconWrapper = (props: IWrapper) => {
