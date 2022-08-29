@@ -9,6 +9,7 @@ import {
     CommandLineIcon,
     PhotoIcon,
     AdjustmentsVerticalIcon,
+    ExclaimationTriangleIcon,
 } from '@heroicons/react/24/solid'
 import {
     HomeIcon as OutlineHomeIcon,
@@ -17,6 +18,7 @@ import {
     CommandLineIcon as OutlineCommandLineIcon,
     PhotoIcon as OutlinePhotoIcon,
     AdjustmentsVerticalIcon as OutlineAdjustmentsVerticalIcon,
+    ExclaimationTriangleIcon as OutlineExclaimationTriangleIcon,
 } from '@heroicons/react/24/outline'
 
 import IconWrapper from './IconWrapper'
@@ -76,6 +78,13 @@ const Sidebar = (props: ISidebar) => {
                 href: "settings",
                 activeIcon: <AdjustmentsVerticalIcon className={iconClass} />,
                 inactiveIcon: <OutlineAdjustmentsVerticalIcon className={iconClass} />,
+                disabled: false,
+            },
+            {
+                title: "Modal",
+                href: "modal",
+                activeIcon: <ExclaimationTriangleIcon className="w-10 h-10 text-red-500" />,
+                inactiveIcon: <OutlineExclaimationTriangleIcon className="w-10 h-10 text-red-500" />,
                 disabled: false,
             }
         ])

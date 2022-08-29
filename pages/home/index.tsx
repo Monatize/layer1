@@ -20,6 +20,7 @@ import PagesPanel from '../../components/Pages/PagesPanel'
 import ContractsPanel from '../../components/Contracts/ContractsPanel'
 import AssetsPanel from '../../components/Assets/AssetsPanel'
 import SettingsPanel from '../../components/Settings/SettingsPanel'
+import Main from '../../components/ModalTest/Main'
 // * Panels
 
 const Home: NextPage = () => {
@@ -86,6 +87,7 @@ const Home: NextPage = () => {
                         {tab === 'contracts' && <ContractsPanel dark={dark} />}
                         {tab === 'assets' && <AssetsPanel dark={dark} />}
                         {tab === 'settings' && <SettingsPanel dark={dark} />}
+                        {tab === "modal" && <Main />}
                     </div>
                 </div>
             )}
