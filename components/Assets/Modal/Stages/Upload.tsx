@@ -128,7 +128,7 @@ const StageTwo = (props: IStageTwo) => {
             className="w-full h-[calc(100%-6rem)] flex flex-col shrink-0 p-8"
         >
             <h1 className={`font-mt font-semibold text-lg text-brand-black`}>
-                You'll be able to edit{' '}
+                You&apos;ll be able to edit{' '}
                 <span className="text-pink-500">metadata, odds, and more</span>{' '}
                 after the group is created.
             </h1>
