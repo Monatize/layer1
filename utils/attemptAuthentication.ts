@@ -24,7 +24,7 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
     }
 
     // - Attempt to authenticate the user with their JWT token & address
-
+    
     // - Connect to signer & get address w/ ethers.js
     const provider = new ethers.providers.Web3Provider(window.ethereum)
     await provider.send('eth_requestAccounts', [])
@@ -36,7 +36,7 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
     if (authToken) {
         // - Implies there was a token - now we query the authentication microservice using axios
         const authQuery = await axios.post(
-            'http://50.18.41.29:3001/authentication',
+            'https://ms-dev.monatize.it/api/users/authentication/',
             {
                 token: authToken,
                 address,
@@ -45,7 +45,7 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
 
         if (authQuery.status === 200) {
             const storeQuery = await axios.get(
-                `http://50.18.41.29:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`
+                `https://ms-dev.monatize.it/api/stores/getbyid/?id=${process.env.NEXT_PUBLIC_STORE_ID}`
             )
             if (storeQuery.data.creator === address) {
                 props.setAuthenticatedState(true)
@@ -56,7 +56,7 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
             const message = getMessage(address)
             const signature = await signer.signMessage(message.message)
             const entryQuery = await axios.post(
-                'http://50.18.41.29:3001/entry',
+                'https://ms-dev.monatize.it/api/users/entry/',
                 {
                     address,
                     signature,
@@ -66,7 +66,7 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
 
             if (entryQuery.status === 200) {
                 const storeQuery = await axios.get(
-                    `http://50.18.41.29:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`
+                    `https://ms-dev.monatize.it/api/stores/getbyid/?id=${process.env.NEXT_PUBLIC_STORE_ID}`
                 )
                 if (storeQuery.data.creator === address) {
                     localStorage.setItem('token', entryQuery.data.identifier)
@@ -85,7 +85,7 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
         const message = getMessage(address)
         const signature = await signer.signMessage(message.message)
 
-        const entryQuery = await axios.post('http://50.18.41.29:3001/entry', {
+        const entryQuery = await axios.post('https://ms-dev.monatize.it/api/users/entry/', {
             address,
             signature,
             nonce: message.nonce,
@@ -93,7 +93,7 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
 
         if (entryQuery.status === 200) {
             const storeQuery = await axios.get(
-                `http://50.18.41.29:3002/stores/getbyid?id=${process.env.NEXT_PUBLIC_STORE_ID}`
+                `https://ms-dev.monatize.it/api/stores/getbyid/?id=${process.env.NEXT_PUBLIC_STORE_ID}`
             )
             if (storeQuery.data.creator === address) {
                 localStorage.setItem('token', entryQuery.data.identifier)
