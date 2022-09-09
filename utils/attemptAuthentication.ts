@@ -36,10 +36,14 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
     if (authToken) {
         // - Implies there was a token - now we query the authentication microservice using axios
         const authQuery = await axios.post(
-            'https://ms-dev.monatize.it/api/users/authentication/',
+            'https://ms-dev.monatize.it/api/users/authorization/',
             {
-                token: authToken,
                 address,
+            },
+            {
+                headers: {
+                    "Authorization": authToken
+                }
             }
         )
 
@@ -55,6 +59,7 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
         } else if (authQuery.status === 401) {
             const message = getMessage(address)
             const signature = await signer.signMessage(message.message)
+            console.log("test: " + signature);
             const entryQuery = await axios.post(
                 'https://ms-dev.monatize.it/api/users/entry/',
                 {
@@ -69,7 +74,7 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
                     `https://ms-dev.monatize.it/api/stores/getbyid/?id=${process.env.NEXT_PUBLIC_STORE_ID}`
                 )
                 if (storeQuery.data.creator === address) {
-                    localStorage.setItem('token', entryQuery.data.identifier)
+                    localStorage.setItem('token', entryQuery.data.data.token);
                     props.setAuthenticatedState(true)
                 } else {
                     props.setAuthenticatedState(false)
@@ -84,7 +89,8 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
     } else {
         const message = getMessage(address)
         const signature = await signer.signMessage(message.message)
-
+        console.log("aaaaaaa" + signature);
+        console.log(address + " " + signature + " " + message.nonce);
         const entryQuery = await axios.post('https://ms-dev.monatize.it/api/users/entry/', {
             address,
             signature,
@@ -96,9 +102,10 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
                 `https://ms-dev.monatize.it/api/stores/getbyid/?id=${process.env.NEXT_PUBLIC_STORE_ID}`
             )
             if (storeQuery.data.creator === address) {
-                localStorage.setItem('token', entryQuery.data.identifier)
+                localStorage.setItem('token', entryQuery.data.data.token)
                 props.setAuthenticatedState(true)
             } else {
+                // props.setAuthenticatedState(false)
                 props.setAuthenticatedState(false)
             }
         } else {
