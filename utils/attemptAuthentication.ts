@@ -49,9 +49,9 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
 
         if (authQuery.status === 200) {
             const storeQuery = await axios.get(
-                `https://ms-dev.monatize.it/api/stores/getbyid/?id=${process.env.NEXT_PUBLIC_STORE_ID}`
+                `https://ms-dev.monatize.it/api/stores/get/?store_id=${process.env.NEXT_PUBLIC_STORE_ID}`
             )
-            if (storeQuery.data.creator === address) {
+            if (storeQuery.data.data.store.creator === address) {
                 props.setAuthenticatedState(true)
             } else {
                 props.setAuthenticatedState(false)
@@ -99,9 +99,9 @@ const attemptAuthentication = async (props: IAttemptAuthentication) => {
 
         if (entryQuery.status === 200) {
             const storeQuery = await axios.get(
-                `https://ms-dev.monatize.it/api/stores/getbyid/?id=${process.env.NEXT_PUBLIC_STORE_ID}`
+                `https://ms-dev.monatize.it/api/stores/get/?store_id=${process.env.NEXT_PUBLIC_STORE_ID}`
             )
-            if (storeQuery.data.creator === address) {
+            if (storeQuery.data.data.store.creator === address) {
                 localStorage.setItem('token', entryQuery.data.data.token)
                 props.setAuthenticatedState(true)
             } else {
